@@ -15,7 +15,7 @@ class SimpleItemForm extends React.Component {
 
   handleSubmit = evt => {
     this.props.saveItem(this.state)
-    this.setState({...defaultState})
+    this.setState({ ...defaultState })
     evt.preventDefault()
   }
 

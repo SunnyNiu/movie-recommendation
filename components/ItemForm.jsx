@@ -14,7 +14,7 @@ class ItemForm extends React.Component {
       isRequired: 'This field cannot be empty.',
       isNotChartreuse: 'Nobody likes chartreuse.'
     },
-    item: {...defaultState},
+    item: { ...defaultState },
     invalid: {},
     validation: {
       name: [ 'isRequired' ],
@@ -26,9 +26,9 @@ class ItemForm extends React.Component {
     }
   }
 
-  componentWillReceiveProps ({editItem}) {
+  componentWillReceiveProps ({ editItem }) {
     if (editItem) {
-      this.setState({item: editItem})
+      this.setState({ item: editItem })
     }
   }
 
@@ -52,14 +52,14 @@ class ItemForm extends React.Component {
 
   resetForm = evt => {
     this.setState({
-      item: {...defaultState},
+      item: { ...defaultState },
       invalid: {}
     })
     evt && evt.preventDefault()
   }
 
   validate () {
-    const invalid = {...this.state.invalid}
+    const invalid = { ...this.state.invalid }
     for (const field in this.state.item) {
       const validators = this.state.validation[field] || []
       validators.forEach(v => {
@@ -70,7 +70,7 @@ class ItemForm extends React.Component {
         }
       })
     }
-    this.setState({invalid})
+    this.setState({ invalid })
     return !Object.keys(invalid).length
   }
 

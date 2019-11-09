@@ -31,12 +31,12 @@ class SimpleItems extends React.Component {
   }
 
   getItem = item => {
-    const {id, name, description, color} = item
+    const { id, name, description, color } = item
     return (
       <tr key={id} className='item' onContextMenu={(evt) => this.deleteItem(evt, id)}>
         <td className='item-name'>{name}</td>
         <td className='item-description'>{description}</td>
-        <td className='item-color' style={{backgroundColor: color}}></td>
+        <td className='item-color' style={{ backgroundColor: color }}></td>
       </tr>
     )
   }

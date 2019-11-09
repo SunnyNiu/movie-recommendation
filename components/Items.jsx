@@ -18,7 +18,7 @@ class Items extends React.Component {
 
   editItem = id => {
     this.setState({
-      editItem: {...this.state.items.find(item => item.id === id)}
+      editItem: { ...this.state.items.find(item => item.id === id) }
     })
   }
 
@@ -32,7 +32,7 @@ class Items extends React.Component {
   }
 
   getItem = item => {
-    const {id, name, description, color} = item
+    const { id, name, description, color } = item
     const editItem = this.editItem.bind(this, id)
     const deleteItem = this.deleteItem.bind(this, id)
     return (
@@ -40,7 +40,7 @@ class Items extends React.Component {
         onClick={editItem} onContextMenu={deleteItem}>
         <td className='item-name'>{name}</td>
         <td className='item-description'>{description}</td>
-        <td className='item-color' style={{backgroundColor: color}}></td>
+        <td className='item-color' style={{ backgroundColor: color }}></td>
       </tr>
     )
   }
