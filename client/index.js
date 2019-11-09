@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { applyMiddleware, createStore, compose } from 'redux'
 import thunk from 'redux-thunk'
@@ -14,14 +14,11 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunk))
 )
 
-document.addEventListener('DOMContentLoaded', () => {
-  render(
-    <Provider store={store}>
-      <App/>
-    </Provider>,
-    document.getElementById('app')
-  )
-})
+function render () {
+  const root = document.getElementById('app')
+  ReactDOM.render(<Provider store={store}><App /></Provider>, root)
+}
 
+render()
 store.subscribe(render)
 store.dispatch(fetchMovie())

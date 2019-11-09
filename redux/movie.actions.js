@@ -1,6 +1,6 @@
-function updateMovieId (text) {
+function updateMovieId (name) {
   return {
-    type: 'Next_Movie',
+    type: 'NEXT_MOVIE',
     name
   }
 }

@@ -1,3 +1,3 @@
 export const searchMovie = {
-  Next_Movie: 'Next_Movie'
+  NEXT_MOVIE: 'NEXT_MOVIE'
 }

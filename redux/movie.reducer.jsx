@@ -6,7 +6,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case searchMovie.Next_Movie:
+    case searchMovie.NEXT_MOVIE:
       return {
         ...state,
         name: action.name
