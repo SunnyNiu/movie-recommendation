@@ -22,7 +22,13 @@ module.exports = {
   devServer: {
     compress: true,
     hot: true,
-    contentBase: './server/public'
+    contentBase: './server/public',
+    proxy: {
+      '/movie/*': {
+        target: 'http://localhost:8080',
+        secure: false
+      }
+    }
   },
   devtool: 'source-map',
   externals: {
