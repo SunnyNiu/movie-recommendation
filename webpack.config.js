@@ -25,7 +25,7 @@ module.exports = {
     contentBase: './server/public',
     proxy: {
       '/movie/*': {
-        target: 'http://localhost:8080',
+        target: 'http://localhost:3000',
         secure: false
       }
     }
