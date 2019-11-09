@@ -1,6 +1,6 @@
 import React from 'react'
 
-import colorList from '../color-list'
+import colorList from '../../color-list'
 
 const defaultState = {
   name: '',

@@ -1,10 +1,10 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-
+const path = require('path')
 module.exports = require('knex')
+
 module.exports = {
-  entry: './index.js',
+  entry: './client/index.js',
   output: {
-    path: __dirname,
+    path: path.join(__dirname, 'server/public'),
     filename: 'bundle.js'
   },
   mode: 'development',
@@ -14,31 +14,15 @@ module.exports = {
       loader: 'babel-loader',
       exclude: /node_modules/
     }
-    // {
-    //   test: /\.css$/,
-    //   user: ['style-loader', 'css-loader'],
-    //   exclude: /node_modules/
-    // },
-    // {
-    //   test: /\.html$/,
-    //   user: {
-    //     loader: 'html-loader'
-    //   },
-    //   exclude: /node_modules/
-    // }
     ]
   },
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     template: '/index.html'
-  //   })
-  // ],
   resolve: {
     extensions: ['.js', '.jsx']
   },
   devServer: {
     compress: true,
-    hot: true
+    hot: true,
+    contentBase: './server/public'
   },
   devtool: 'source-map',
   externals: {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import * as localDb from '../localDb'
+import * as localDb from '../../localDb'
 import ItemForm from './ItemForm'
 
 class Items extends React.Component {
