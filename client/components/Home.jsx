@@ -1,8 +1,6 @@
 import React from 'react'
 const path = require('path')
 
-const filePath = path.join(__dirname, '/images/')
-
 function getRandomInt (min, max) {
   min = Math.ceil(min)
   max = Math.floor(max)

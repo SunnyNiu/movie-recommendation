@@ -15,9 +15,8 @@ function getRandomInt (min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-const cardId = getRandomInt(1, 32)
 server.get('/movie', (req, res) => {
-  db.getMovieById(cardId).then(x => { res.json(x[0]) })
+  db.getMovieById(getRandomInt(1, 32)).then(x => res.json(x[0]))
 })
 
 server.listen(PORT, () => console.log(`Listening on port ${PORT}.`))

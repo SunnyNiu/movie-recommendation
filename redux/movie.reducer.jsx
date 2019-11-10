@@ -9,7 +9,9 @@ export default (state = initialState, action) => {
     case searchMovie.NEXT_MOVIE:
       return {
         ...state,
-        name: action.name
+        name: action.name,
+        image: action.image,
+        id: action.id
       }
     default:
       return state
