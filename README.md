@@ -24,4 +24,4 @@ http://localhost:8080/simple       | Much simpler form, still using controlled c
 ## Things to try
 
 Add a bunch more text fields. Try adding more form elements that control appearance: for example, a checkbox that 'features' the item in the list by highlighting it, a slider for color opacity, or radio buttons for "will explode", "won't explode", "may explode (we're not sure)", etc. If you're feeling ambitious, add a file upload component!
-# movio-recommendation
+# movie-recommendation
