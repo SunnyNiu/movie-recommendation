@@ -1,5 +1,4 @@
 import React from 'react'
-const path = require('path')
 
 function getRandomInt (min, max) {
   min = Math.ceil(min)
@@ -9,7 +8,30 @@ function getRandomInt (min, max) {
 
 class Home extends React.Component {
   state = {
-    cardId: getRandomInt(1, 32)
+    cardId: getRandomInt(1, 32),
+    genres: {
+      Action: 0,
+      Adventure: 0,
+      Animation: 0,
+      Biography: 0,
+      Comedy: 0,
+      Crime: 0,
+      Drama: 0,
+      Family: 0,
+      Fantasy: 0,
+      FilmNoir: 0,
+      History: 0,
+      Horror: 0,
+      Music: 0,
+      Musical: 0,
+      Mystery: 0,
+      Romance: 0,
+      SciFi: 0,
+      Sport: 0,
+      Thriller: 0,
+      War: 0,
+      Western: 0
+    }
   }
 
   componentDidMount () {
@@ -18,6 +40,9 @@ class Home extends React.Component {
     })
   }
 
+  updateCommentLikeDislike () {
+
+  }
   nextMovie = () => {
     this.setState({
       cardId: getRandomInt(1, 32)
@@ -26,10 +51,9 @@ class Home extends React.Component {
 
   render () {
     return (
-      <div className='container group'>
-        <img src={`/public/images/${this.state.cardId}.png`}/>
+      <div className='container'>
+        {/* <img src={`/public/images/${this.state.cardId}.png`}/> */}
         <p>{this.state.cardId}</p>
-        <button onClick={this.nextMovie}>Next Movie</button>
       </div>
     )
   }

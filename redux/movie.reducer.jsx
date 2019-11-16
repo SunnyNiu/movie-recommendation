@@ -1,7 +1,7 @@
 import { searchMovie } from './movie.types'
 
 const initialState = {
-  name: ''
+  movie: ''
 }
 
 export default (state = initialState, action) => {
@@ -9,9 +9,7 @@ export default (state = initialState, action) => {
     case searchMovie.NEXT_MOVIE:
       return {
         ...state,
-        name: action.name,
-        image: action.image,
-        id: action.id
+        movie: action.movie
       }
     default:
       return state

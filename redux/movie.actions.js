@@ -1,9 +1,9 @@
-function updateMovieId (name, image, id) {
+import { searchMovie } from './movie.types'
+
+function updateMovieId (movie) {
   return {
-    type: 'NEXT_MOVIE',
-    name,
-    image,
-    id
+    type: searchMovie.NEXT_MOVIE,
+    movie: movie
   }
 }
 
@@ -11,7 +11,6 @@ export function fetchMovie () {
   return function (dispatch) {
     return fetch('/movie')
       .then(resp => resp.json())
-      .then((body) => dispatch(updateMovieId(body.name, body.image, body.id))
-      )
+      .then((body) => { console.log('body', body); dispatch(updateMovieId(body)) })
   }
 }

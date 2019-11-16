@@ -1,18 +1,50 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { fetchMovie } from '../../redux/movie.actions'
 
-const App = ({ name, image }) => (
-  <div className="container">
-    <h1>{name}</h1>
-    <img src={image}/>
-  </div>
-)
+class App extends React.Component {
+  constructor (props) {
+    super()
+    this.state = {
+      show: false
+    }
+    this.nextMovie = this.nextMovie.bind(this)
+  }
+  componentDidMount () {
+    // const { fetchMovie } = this.props
+    // fetchMovie()
+  }
 
-function mapStateToProps (state) {
-  return {
-    name: state.name,
-    image: state.image
+  nextMovie () {
+
+  }
+  render () {
+    return (<div className="container">
+      {this.state.show ? (<div className="notification">
+        {/* <h1>{this.props.name}</h1>
+        <img src={this.props.image}/> */}
+        <button
+          className='pure-button'>
+        Dislike
+        </button>
+        <button
+          className='pure-button'>
+        Like
+        </button>
+        <button onClick={() => this.props.fetchMovie(this.state.inputValue)}>+</button>
+      </div>) : null }
+
+    </div>)
   }
 }
 
-export default connect(mapStateToProps)(App)
+function mapStateToProps (state) {
+  return {
+    movie: state.movie
+  }
+}
+const mapDispatchToProps = dispatch => ({
+  fetchMovie: () => dispatch(fetchMovie())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

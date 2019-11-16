@@ -1,7 +1,5 @@
 const path = require('path')
 const express = require('express')
-const bodyParser = require('body-parser')
-const PORT = process.env.PORT || 3000
 const db = require('../db/db')
 
 const server = express()
@@ -16,7 +14,25 @@ function getRandomInt (min, max) {
 }
 
 server.get('/movie', (req, res) => {
-  db.getMovieById(getRandomInt(1, 32)).then(x => res.json(x[0]))
+  db.getMovieById(getRandomInt(1, 32))
+    .then(x => { console.log('x', x[0]); res.json(x[0]) })
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR:' + err.message)
+    })
 })
 
-server.listen(PORT, () => console.log(`Listening on port ${PORT}.`))
+server.get('/movieGeneres/:movieId', (req, res) => {
+  const array = []
+  const movieId = Number(req.params.movieId)
+  db.getMovieById(movieId)
+    .then(x =>
+      db.getGenreId(x[0].id)
+        .then(y => { y.map(genre => array.push(genre['genre_id'])) })
+        .then(() => db.getGenres(array).then(z => res.json(z)))
+    )
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR:' + err.message)
+    })
+})
+
+module.exports = server
