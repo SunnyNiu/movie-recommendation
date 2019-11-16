@@ -9,7 +9,7 @@ function updateMovieId (movie) {
 
 export function fetchMovie () {
   return function (dispatch) {
-    return fetch('/movie')
+    return fetch('http://localhost:3000/movie')
       .then(resp => resp.json())
       .then((body) => { console.log('body', body); dispatch(updateMovieId(body)) })
   }
