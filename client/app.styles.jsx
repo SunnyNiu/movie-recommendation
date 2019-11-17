@@ -30,11 +30,11 @@ align-items: center;
 `
 
 export const MovieImg = styled.img`
-  animation: ${rotate360} infinite 120s linear;
+  /* animation: ${rotate360} infinite 120s linear; */
   height: 500px;
-  &:hover {
+  /* &:hover {
     animation: ${rotate360} infinite 1.5s linear;
-  }
+  } */
 `
 
 export const Title = styled.h1`
@@ -56,5 +56,9 @@ font-family: Arial, Helvetica, sans-serif;
 export const HomePageContainer = styled.div`
 display: flex;
 flex-direction: column;
+align-items: center;
+`
+
+export const MovieContainer = styled.div`
 align-items: center;
 `
