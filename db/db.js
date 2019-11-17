@@ -24,4 +24,3 @@ function getGenreId (movieId, db = connection) {
 function getGenres (genreIds, db = connection) {
   return db('genres').where('id', 'in', genreIds).select()
 }
-
