@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const rotate360 = keyframes`
   from {
@@ -27,14 +28,11 @@ export const Container = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+padding: 300px;
 `
 
 export const MovieImg = styled.img`
-  /* animation: ${rotate360} infinite 120s linear; */
   height: 500px;
-  /* &:hover {
-    animation: ${rotate360} infinite 1.5s linear;
-  } */
 `
 
 export const Title = styled.h1`
@@ -56,7 +54,8 @@ font-family: Arial, Helvetica, sans-serif;
 export const HomePageContainer = styled.div`
 display: flex;
 flex-direction: column;
-align-items: center;
+text-align: center;
+padding: 300px;
 `
 
 export const MovieContainer = styled.div`
@@ -67,5 +66,18 @@ export const WelcomeTitle = styled.p`
 font-style: italic;
 font-size: 1.5rem;
 font-family: Arial, Helvetica, sans-serif;
+align-items: center;
+`
+
+export const LinkContainer = styled(Link)`
+height: 100%;
+width: 70px;
+padding: 40px;
+align-items: center;
+font-size: 1.5rem;
+font-style: italic;
+`
+
+export const HomeContainer = styled.div`
 align-items: center;
 `

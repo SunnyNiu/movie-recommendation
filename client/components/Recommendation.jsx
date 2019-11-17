@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { MovieContainer, Title, MovieImg } from '../app.styles'
+import { MovieContainer, Title, MovieImg, LinkContainer } from '../app.styles'
 import { Link } from 'react-router-dom'
 
 class Recommendation extends React.Component {
@@ -25,7 +25,7 @@ class Recommendation extends React.Component {
           <Title>You Probably Like this Movie: {name} </Title>
           <MovieImg src={image} alt='movieImage'/>
         </MovieContainer>
-        <Link to='/' > Back to Home! </Link>
+        <LinkContainer to='/' > Back to Home! </LinkContainer>
       </div>
     </div>)
   }
