@@ -15,7 +15,7 @@ function getRandomInt (min, max) {
 
 server.get('/movie', (req, res) => {
   db.getMovieById(getRandomInt(1, 32))
-    .then(x => { console.log('x', x[0]); res.json(x[0]) })
+    .then(x => res.json(x[0]))
     .catch(err => {
       res.status(500).send('DATABASE ERROR:' + err.message)
     })

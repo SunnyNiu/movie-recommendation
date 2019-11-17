@@ -46,6 +46,18 @@ export default (state = initialState, action) => {
         ...state,
         genres: newGenres
       }
+    case searchMovie.DISLIKE_MOVIE:
+      const dislikeGenres = {
+        ...state.genres
+      }
+      action.genres.forEach(genre => {
+        dislikeGenres[genre.type] = dislikeGenres[genre.type] - 1
+      })
+
+      return {
+        ...state,
+        genres: dislikeGenres
+      }
     default:
       return state
   }

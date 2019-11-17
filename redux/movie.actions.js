@@ -23,12 +23,21 @@ function likeMovie (genres) {
   }
 }
 
+function dislikeMovie (genres) {
+  return {
+    type: searchMovie.DISLIKE_MOVIE,
+    genres
+  }
+}
+
 // async
-export function fetchMovieGenresByMovieId (movieId) {
-  console.log('movieId', movieId)
+export function fetchMovieGenresByMovieId (movieId, option) {
+  console.log('option', option)
   return function (dispatch) {
     return fetch(`/movieGeneres/${movieId}`)
       .then(resp => resp.json())
-      .then((body) => dispatch(likeMovie(body)))
+      .then((body) => (
+        `${option}` === 'like' ? dispatch(likeMovie(body)) : dispatch(dislikeMovie(body))
+      ))
   }
 }
