@@ -1,7 +1,6 @@
 import React from 'react'
-import { HomePageContainer, MovieContainer, MovieImg, WelcomeTitle } from '../app.styles'
-import { Route, Switch, Link } from 'react-router-dom'
-import App from './App'
+import { HomePageContainer, WelcomeTitle } from '../app.styles'
+import { Link } from 'react-router-dom'
 
 export const Home = () =>
   (<HomePageContainer>

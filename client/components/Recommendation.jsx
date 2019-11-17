@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button, MovieContainer, Title, MovieImg } from '../app.styles'
+import { MovieContainer, Title, MovieImg } from '../app.styles'
+import { Link } from 'react-router-dom'
 
 class Recommendation extends React.Component {
   constructor (props) {
@@ -24,9 +25,7 @@ class Recommendation extends React.Component {
           <Title>You Probably Like this Movie: {name} </Title>
           <MovieImg src={image} alt='movieImage'/>
         </MovieContainer>
-        <Button>
-            Back to Home
-        </Button>
+        <Link to='/' > Back to Home! </Link>
       </div>
     </div>)
   }
@@ -38,8 +37,5 @@ function mapStateToProps (state) {
     movie: state.movie
   }
 }
-const mapDispatchToProps = dispatch => ({
-  fetchRecommendMovies: () => dispatch(fetchRecommendMovies())
-})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Recommendation)
+export default connect(mapStateToProps)(Recommendation)
