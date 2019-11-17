@@ -5,26 +5,18 @@ import { fetchMovie } from '../../redux/movie.actions'
 class App extends React.Component {
   constructor (props) {
     super()
-    this.state = {
-      show: true,
-      movie: {}
-    }
-    this.nextMovie = this.nextMovie.bind(this)
   }
   componentDidMount () {
     const { fetchMovie } = this.props
     fetchMovie()
   }
 
-  nextMovie = () => {
-    console.log('movie', this.state.movie)
-  }
-
   render () {
     return (<div className="container">
       <div className="notification">
-        {/* <h1>{this.props.name}</h1>
-        <img src={this.props.image}/> */}
+        <h1>{this.props.movie.id}</h1>
+        <h2>{this.props.movie.name}</h2>
+        <img src={this.props.movie.image}/>
         <button
           className='pure-button'>
         Dislike

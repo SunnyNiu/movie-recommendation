@@ -8,9 +8,10 @@ function updateMovieId (movie) {
   }
 }
 
+// async
 export function fetchMovie () {
   return function (dispatch) {
-    return fetch('http://localhost:3000/movie')
+    return fetch('/movie')
       .then(resp => resp.json())
       .then((body) => { console.log('body', body); dispatch(updateMovieId(body)) })
   }
