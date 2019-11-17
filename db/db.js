@@ -3,16 +3,15 @@ const config = require('../knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getGenres,
+  // getGenres,
   getMovieById,
   getGenreId,
-  getGenres,
-  getGenresMovie
+  getGenresById
 }
 
-function getGenres (db = connection) {
-  return db('genres').select()
-}
+// function getGenres (db = connection) {
+//   return db('genres').select()
+// }
 
 function getMovieById (cardId, db = connection) {
   return db('movies').where('id', cardId).select()
@@ -22,6 +21,6 @@ function getGenreId (movieId, db = connection) {
   return db('movies_genres').where('movie_id', movieId).select()
 }
 
-function getGenresMovie (genreIds, db = connection) {
+function getGenresById (genreIds, db = connection) {
   return db('genres').where('id', 'in', genreIds).select()
 }
