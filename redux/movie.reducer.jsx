@@ -39,7 +39,11 @@ export default (state = initialState, action) => {
         ...state.genres
       }
       action.genres.forEach(genre => {
-        newGenres[genre.type] = newGenres[genre.type] + 1
+        if (genre.type === 'Sci-Fi') {
+          newGenres['SciFi'] = newGenres['SciFi'] + 1
+        } else {
+          newGenres[genre.type] = newGenres[genre.type] + 1
+        }
       })
 
       return {
@@ -51,7 +55,12 @@ export default (state = initialState, action) => {
         ...state.genres
       }
       action.genres.forEach(genre => {
-        dislikeGenres[genre.type] = dislikeGenres[genre.type] - 1
+        console.log('genre', genre)
+        if (genre.type === 'Sci-Fi') {
+          dislikeGenres['SciFi'] = dislikeGenres['SciFi'] - 1
+        } else {
+          dislikeGenres[genre.type] = dislikeGenres[genre.type] - 1
+        }
       })
 
       return {

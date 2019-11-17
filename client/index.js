@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { applyMiddleware, createStore, compose } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from '../redux/movie.reducer'
-import { fetchMovie, fetchMovieGenresByMovieId } from '../redux/movie.actions'
+import { fetchMovie, fetchMovieGenresByMovieId, fetchRecommendMovies } from '../redux/movie.actions'
 
 import App from './components/App'
 
@@ -23,3 +23,4 @@ render()
 store.subscribe(render)
 store.dispatch(fetchMovie())
 store.dispatch(fetchMovieGenresByMovieId())
+store.dispatch(fetchRecommendMovies())

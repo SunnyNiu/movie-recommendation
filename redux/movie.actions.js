@@ -41,3 +41,22 @@ export function fetchMovieGenresByMovieId (movieId, option) {
       ))
   }
 }
+
+function getRecommendMovie () {
+  return {
+    type: searchMovie.REC_MOVIE,
+    movie
+  }
+}
+
+// async
+export function fetchRecommendMovies (generes) {
+  console.log('option', option)
+  return function (dispatch) {
+    return fetch(`/movieGeneres/${movieId}`)
+      .then(resp => resp.json())
+      .then((body) => (
+        `${option}` === 'like' ? dispatch(likeMovie(body)) : dispatch(dislikeMovie(body))
+      ))
+  }
+}

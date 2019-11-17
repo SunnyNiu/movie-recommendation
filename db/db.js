@@ -6,7 +6,8 @@ module.exports = {
   getGenres,
   getMovieById,
   getGenreId,
-  getGenres
+  getGenres,
+  getGenresMovie
 }
 
 function getGenres (db = connection) {
@@ -21,6 +22,6 @@ function getGenreId (movieId, db = connection) {
   return db('movies_genres').where('movie_id', movieId).select()
 }
 
-function getGenres (genreIds, db = connection) {
+function getGenresMovie (genreIds, db = connection) {
   return db('genres').where('id', 'in', genreIds).select()
 }
