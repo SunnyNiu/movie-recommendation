@@ -4,7 +4,8 @@ import { Provider } from 'react-redux'
 import { applyMiddleware, createStore, compose } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from '../redux/movie.reducer'
-import { fetchMovie, fetchMovieGenresByMovieId } from '../redux/movie.actions'
+import { fetchMovie } from '../redux/movie.actions'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import App from './components/App'
 
@@ -16,10 +17,9 @@ const store = createStore(
 
 function render () {
   const root = document.getElementById('app')
-  ReactDOM.render(<Provider store={store}><App /></Provider>, root)
+  ReactDOM.render(<Provider store={store}><Router><App /></Router></Provider>, root)
 }
 
 render()
 store.subscribe(render)
 store.dispatch(fetchMovie())
-// store.dispatch(fetchRecommendMovies())

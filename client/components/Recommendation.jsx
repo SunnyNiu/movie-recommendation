@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Button, MovieContainer, Title, MovieImg } from '../app.styles'
 
-class Recommand extends React.Component {
+class Recommendation extends React.Component {
   constructor (props) {
     super()
   }
@@ -17,23 +18,30 @@ class Recommand extends React.Component {
       if (genres[key] === max) genresArray.push(key)
     }
 
+    const { name, image } = this.props.movie
     return (<div className="container">
       <div className="notification">
-        <p>Welcome!!</p>
+        <MovieContainer>
+          <Title>You Probably Like this Movie: {name} </Title>
+          <MovieImg src={image} alt='movieImage'/>
+        </MovieContainer>
+        <Button>
+            Back to Home
+        </Button>
       </div>
-      )
     </div>)
   }
 }
 
 function mapStateToProps (state) {
   return {
-    genres: state.genres
+    genres: state.genres,
+    movie: state.movie
   }
 }
 const mapDispatchToProps = dispatch => ({
   // fetchMovie: () => dispatch(fetchMovie()),
-  // getGenresMovie
+  fetchRecommendMovies: () => dispatch(fetchRecommendMovies())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Recommand)
+export default connect(mapStateToProps, mapDispatchToProps)(Recommendation)

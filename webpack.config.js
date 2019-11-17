@@ -32,6 +32,11 @@ module.exports = {
       '/movieGenres/*': {
         target: 'http://localhost:3000',
         secure: false
+      },
+
+      '/recommendation/*': {
+        target: 'http://localhost:3000',
+        secure: false
       }
     }
   },

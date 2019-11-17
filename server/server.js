@@ -35,17 +35,19 @@ server.get('/movieGenres/:movieId', (req, res) => {
     })
 })
 
-// server.get('/recommend', (req, res) => {
-//   const array = []
-//   db.getGenresMovie(movieId)
-//     .then(x =>
-//       db.getGenreId(x[0].id)
-//         .then(y => { y.map(genre => array.push(genre['genre_id'])) })
-//         .then(() => db.getGenres(array).then(z => res.json(z)))
-//     )
-//     .catch(err => {
-//       res.status(500).send('DATABASE ERROR:' + err.message)
-//     })
-// })
+server.get('/recommendation/:genre', (req, res) => {
+  const genre = req.params.genre
+  db.getGenresIdByGenre(genre)
+    .then(x => {
+      console.log('x', x)
+      db.getMovieIdByGenreId(x[0].id)
+        .then(y => db.getMovieById(y[0].movie_id))
+        .then(z => { console.log('z', z); res.json(z) })
+    }
+    )
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR:' + err.message)
+    })
+})
 
 module.exports = server
