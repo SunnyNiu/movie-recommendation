@@ -57,6 +57,8 @@ export const HomePageContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+background-image: url(./images/movie-background-wall.jpg);
+background-size: contain;
 `
 
 export const MovieContainer = styled.div`
