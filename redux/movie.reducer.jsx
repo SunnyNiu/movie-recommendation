@@ -24,7 +24,8 @@ const initialState = {
     Thriller: 0,
     War: 0,
     Western: 0
-  }
+  },
+  moviesId: []
 }
 
 export default (state = initialState, action) => {
@@ -32,7 +33,8 @@ export default (state = initialState, action) => {
     case searchMovie.NEXT_MOVIE:
       return {
         ...state,
-        movie: action.movie
+        movie: action.movie,
+        moviesId: [...state.moviesId, action.movie.id]
       }
     case searchMovie.LIKE_MOVIE:
       const newGenres = {

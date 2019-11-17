@@ -8,9 +8,9 @@ function updateMovieId (movie) {
 }
 
 // async
-export function fetchMovie () {
+export function fetchMovie (moviesId) {
   return function (dispatch) {
-    return fetch('/movie')
+    return fetch(`/movie/${moviesId}`)
       .then(resp => resp.json())
       .then((body) => { console.log('body', body); dispatch(updateMovieId(body)) })
   }
