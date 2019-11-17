@@ -37,16 +37,10 @@ class App extends React.Component {
     return (<Container>
       {dislike + like >= count ? (<Recommand></Recommand>) : (
         <div className="notification">
-          {/* <TwoColumn > */}
           <MovieContainer>
             <Title>{name}</Title>
             <MovieImg src={image} alt='movieImage'/>
           </MovieContainer>
-          {/* <div>
-              <Description>Movie Description</Description>
-            </div> */}
-          {/* </TwoColumn> */}
-
           <Button
             className='pure-button' onClick={() => { this.props.fetchMovieGenresByMovieId(id, 'dislike'); this.addDislikeAccount(); this.props.fetchMovie() }}>
           👎 Dislike
@@ -55,7 +49,6 @@ class App extends React.Component {
             className='pure-button' onClick={() => { this.props.fetchMovieGenresByMovieId(id, 'like'); this.addLikeAccount(); this.props.fetchMovie() }}>
          👍 Like
           </Button>
-          {/* <Button onClick={() => this.props.fetchMovie()}>Next Movie</Button> */}
         </div>
       )}
     </Container>)

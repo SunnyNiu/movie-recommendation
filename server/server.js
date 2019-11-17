@@ -21,7 +21,7 @@ server.get('/movie', (req, res) => {
     })
 })
 
-server.get('/movieGeneres/:movieId', (req, res) => {
+server.get('/movieGenres/:movieId', (req, res) => {
   const array = []
   const movieId = Number(req.params.movieId)
   db.getMovieById(movieId)
