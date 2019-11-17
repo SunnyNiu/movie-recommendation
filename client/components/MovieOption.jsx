@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { fetchMovie, fetchMovieGenresByMovieId } from '../../redux/movie.actions'
 import Recommendation from './Recommendation'
 import { Button, Container, MovieImg, Title, MovieContainer } from '../app.styles'
-// import HomePage from './pages/homepage/homepage.component'
 
 class MovieOption extends React.Component {
   constructor (props) {

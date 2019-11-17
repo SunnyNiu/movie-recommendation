@@ -11,7 +11,6 @@ class Recommendation extends React.Component {
     const genres = this.props.genres
     let arr = Object.values(genres)
     let max = Math.max(...arr)
-    console.log('max', max)
 
     const genresArray = []
     for (let [key, value] of Object.entries(genres)) {
@@ -40,7 +39,6 @@ function mapStateToProps (state) {
   }
 }
 const mapDispatchToProps = dispatch => ({
-  // fetchMovie: () => dispatch(fetchMovie()),
   fetchRecommendMovies: () => dispatch(fetchRecommendMovies())
 })
 
