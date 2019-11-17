@@ -57,10 +57,15 @@ export const HomePageContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-background-image: url(./images/movie-background-wall.jpg);
-background-size: contain;
 `
 
 export const MovieContainer = styled.div`
+align-items: center;
+`
+
+export const WelcomeTitle = styled.p`
+font-style: italic;
+font-size: 1.5rem;
+font-family: Arial, Helvetica, sans-serif;
 align-items: center;
 `
