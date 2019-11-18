@@ -38,11 +38,11 @@ class MovieOption extends React.Component {
             <MovieImg src={image} alt='movieImage'/>
           </MovieContainer>
           <Button
-            className='pure-button' onClick={() => { this.props.fetchMovieGenresByMovieId(id, 'dislike'); this.addDislikeAccount(); this.props.fetchMovie(this.props.moviesId) }}>
+            onClick={() => { this.props.fetchMovieGenresByMovieId(id, 'dislike'); this.addDislikeAccount(); this.props.fetchMovie(this.props.moviesId) }}>
           👎 Dislike
           </Button>
           <Button
-            className='pure-button' onClick={() => { this.props.fetchMovieGenresByMovieId(id, 'like'); this.addLikeAccount(); this.props.fetchMovie(this.props.moviesId) }}>
+            onClick={() => { this.props.fetchMovieGenresByMovieId(id, 'like'); this.addLikeAccount(); this.props.fetchMovie(this.props.moviesId) }}>
          👍 Like
           </Button>
         </div>

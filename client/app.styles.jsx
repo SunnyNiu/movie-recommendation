@@ -16,7 +16,7 @@ export const Button = styled.button`
   border: 2px solid palevioletred;
   color: palevioletred;
   margin: 0 1em;
-  padding: 0.25em 2em;
+  padding: 0 em 2.5em;
   font-size: 2rem;
   &:hover {
     cursor: pointer;
@@ -40,17 +40,6 @@ font-size: 2rem;
 font-family: Arial, Helvetica, sans-serif;
 `
 
-export const TwoColumn = styled.div`
-display: grid
-grid-template-columns: 1fr 1fr
-`
-
-export const Description = styled.p`
-font-style: italic;
-font-size: 1rem;
-font-family: Arial, Helvetica, sans-serif;
-`
-
 export const HomePageContainer = styled.div`
 display: flex;
 flex-direction: column;
@@ -64,7 +53,7 @@ align-items: center;
 
 export const WelcomeTitle = styled.p`
 font-style: italic;
-font-size: 1.5rem;
+font-size: 2.5rem;
 font-family: Arial, Helvetica, sans-serif;
 align-items: center;
 `
@@ -80,4 +69,6 @@ font-style: italic;
 
 export const HomeContainer = styled.div`
 align-items: center;
+background-color: white;
+height: 500px;
 `

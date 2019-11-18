@@ -70,8 +70,7 @@ export default (state = initialState, action) => {
       }
     case searchMovie.CLEAR_ALLSTATE:
       return {
-        ...state,
-        state: initialState
+        initialState
       }
     default:
       return state
