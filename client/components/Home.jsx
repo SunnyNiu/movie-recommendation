@@ -24,4 +24,7 @@ function mapStateToProps (state) {
     moviesId: state.moviesId
   }
 }
+// const mapDispatchToProps = dispatch => ({
+//   fetchMovie: () => dispatch(fetchMovie())
+// })
 export default connect(mapStateToProps)(Home)

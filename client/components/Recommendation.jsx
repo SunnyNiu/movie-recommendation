@@ -11,10 +11,7 @@ class Recommendation extends React.Component {
     let max = Math.max(...arr)
     const { history } = this.props
 
-    const genresArray = []
-    for (let [key, value] of Object.entries(genres)) {
-      if (genres[key] === max) genresArray.push(key)
-    }
+    const likedGenre = Object.keys(genres).find(key => genres[key] === max)
 
     const { name, image } = this.props.movie
     return (<div className="container">

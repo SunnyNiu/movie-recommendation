@@ -45,10 +45,9 @@ server.get('/recommendation/:genre', (req, res) => {
   const genre = req.params.genre
   db.getGenresIdByGenre(genre)
     .then(x => {
-      console.log('x', x)
       db.getMovieIdByGenreId(x[0].id)
         .then(y => db.getMovieById(y[0].movie_id))
-        .then(z => { console.log('z', z); res.json(z) })
+        .then(z => { res.json(z) })
     }
     )
     .catch(err => {

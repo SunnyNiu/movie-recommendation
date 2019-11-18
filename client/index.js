@@ -22,4 +22,3 @@ function render () {
 
 render()
 store.subscribe(render)
-store.dispatch(fetchMovie())

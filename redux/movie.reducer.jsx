@@ -69,9 +69,8 @@ export default (state = initialState, action) => {
         genres: dislikeGenres
       }
     case searchMovie.CLEAR_ALLSTATE:
-      return {
-        initialState
-      }
+      return initialState
+
     default:
       return state
   }
