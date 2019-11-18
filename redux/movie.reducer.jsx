@@ -57,7 +57,6 @@ export default (state = initialState, action) => {
         ...state.genres
       }
       action.genres.forEach(genre => {
-        console.log('genre', genre)
         if (genre.type === 'Sci-Fi') {
           dislikeGenres['SciFi'] = dislikeGenres['SciFi'] - 1
         } else {
@@ -68,6 +67,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         genres: dislikeGenres
+      }
+    case searchMovie.CLEAR_ALLSTATE:
+      return {
+        ...state,
+        state: initialState
       }
     default:
       return state

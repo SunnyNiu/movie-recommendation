@@ -12,7 +12,7 @@ export function fetchMovie (moviesId) {
   return function (dispatch) {
     return fetch(`/movie/${moviesId}`)
       .then(resp => resp.json())
-      .then((body) => { console.log('body', body); dispatch(updateMovieId(body)) })
+      .then((body) => dispatch(updateMovieId(body)))
   }
 }
 
@@ -52,3 +52,7 @@ export function fetchRecommendMovies (genre) {
       ))
   }
 }
+
+export const clearAll = () => ({
+  type: searchMovie.CLEAR_ALLSTATE
+})

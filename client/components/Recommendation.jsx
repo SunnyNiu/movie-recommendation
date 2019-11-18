@@ -1,17 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { MovieContainer, Title, MovieImg, LinkContainer } from '../app.styles'
-import { Link } from 'react-router-dom'
+import { MovieContainer, Title, MovieImg, Button } from '../app.styles'
+import { withRouter } from 'react-router-dom'
+import { clearAll } from '../../redux/movie.actions'
 
 class Recommendation extends React.Component {
-  constructor (props) {
-    super()
-  }
-
   render () {
     const genres = this.props.genres
     let arr = Object.values(genres)
     let max = Math.max(...arr)
+    const { history } = this.props
 
     const genresArray = []
     for (let [key, value] of Object.entries(genres)) {
@@ -25,7 +23,7 @@ class Recommendation extends React.Component {
           <Title>You Probably Like this Movie: {name} </Title>
           <MovieImg src={image} alt='movieImage'/>
         </MovieContainer>
-        <LinkContainer to='/' > Back to Home! </LinkContainer>
+        <Button onClick={() => { history.push('/'); this.props.clearAll() }}> Back to Home! </Button>
       </div>
     </div>)
   }
@@ -38,4 +36,7 @@ function mapStateToProps (state) {
   }
 }
 
-export default connect(mapStateToProps)(Recommendation)
+const mapDispatchToProps = dispatch => ({
+  clearAll: () => dispatch(clearAll())
+})
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Recommendation))

@@ -5,7 +5,7 @@ import { applyMiddleware, createStore, compose } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from '../redux/movie.reducer'
 import { fetchMovie } from '../redux/movie.actions'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 import App from './components/App'
 
@@ -17,7 +17,7 @@ const store = createStore(
 
 function render () {
   const root = document.getElementById('app')
-  ReactDOM.render(<Provider store={store}><Router><App /></Router></Provider>, root)
+  ReactDOM.render(<Provider store={store}><BrowserRouter><App /></BrowserRouter></Provider>, root)
 }
 
 render()

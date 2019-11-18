@@ -5,27 +5,23 @@ import Recommendation from './Recommendation'
 import { Button, Container, MovieImg, Title, MovieContainer } from '../app.styles'
 
 class MovieOption extends React.Component {
-  constructor (props) {
-    super(),
-    this.state = {
-      like: 0,
-      dislike: 0,
-      count: 10
-    }
-    this.addLikeAccount = this.addLikeAccount.bind(this)
+  state = {
+    like: 0,
+    dislike: 0,
+    count: 10
   }
   componentDidMount () {
     const { fetchMovie } = this.props
     fetchMovie()
   }
 
-  addLikeAccount () {
+  addLikeAccount =() => {
     this.setState({
       like: this.state.like + 1
     })
   }
 
-  addDislikeAccount () {
+  addDislikeAccount =() => {
     this.setState({
       dislike: this.state.dislike + 1
     })
