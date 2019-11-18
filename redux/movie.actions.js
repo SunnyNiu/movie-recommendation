@@ -47,9 +47,10 @@ export function fetchRecommendMovies (genre) {
   return function (dispatch) {
     return fetch(`/recommendation/${genre}`)
       .then(resp => resp.json())
-      .then((body) => (
-        dispatch(updateMovieId(body))
-      ))
+      .then((body) => {
+        console.log('body recommend movies', body)
+        dispatch(updateMovieId(body[0]))
+      })
   }
 }
 
