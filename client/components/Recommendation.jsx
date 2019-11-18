@@ -41,6 +41,6 @@ function mapStateToProps (state) {
 
 const mapDispatchToProps = dispatch => ({
   clearAll: () => dispatch(clearAll()),
-  fetchRecommendMovies: () => dispatch(fetchRecommendMovies)
+  fetchRecommendMovies: (genre) => dispatch(fetchRecommendMovies(genre))
 })
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Recommendation))
