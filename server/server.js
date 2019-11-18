@@ -59,7 +59,7 @@ server.get('/recommendation/:genre', (req, res) => {
 
 server.get('/recommendation/:genre/:moviesId', (req, res) => {
   const genre = req.params.genre
-  const moviesId = '(' + req.params.moviesId + ')'
+  const moviesId = req.params.moviesId.split(',')
   db.getGenresIdByGenre(genre)
     .then(x => {
       console.log('xsssss', x)
