@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { MovieContainer, Title, MovieImg, Button } from '../app.styles'
 import { withRouter } from 'react-router-dom'
-import { clearAll, fetchRecommendMovies } from '../../redux/movie.actions'
+import { clearAll, fetchRecommendMoviesNotInShowedBefore } from '../../redux/movie.actions'
 
 class Recommendation extends React.Component {
   componentDidMount () {
@@ -12,8 +12,8 @@ class Recommendation extends React.Component {
     console.log('max', max)
     const likedGenre = Object.keys(genres).find(key => genres[key] === max)
     console.log('likedGenre', likedGenre)
-    const { fetchRecommendMovies } = this.props
-    fetchRecommendMovies(likedGenre)
+    const { fetchRecommendMoviesNotInShowedBefore } = this.props
+    fetchRecommendMoviesNotInShowedBefore(likedGenre, this.props.moviesId)
   }
 
   render () {
@@ -35,12 +35,13 @@ class Recommendation extends React.Component {
 function mapStateToProps (state) {
   return {
     genres: state.genres,
-    movie: state.movie
+    movie: state.movie,
+    moviesId: state.moviesId
   }
 }
 
 const mapDispatchToProps = dispatch => ({
   clearAll: () => dispatch(clearAll()),
-  fetchRecommendMovies: (genre) => dispatch(fetchRecommendMovies(genre))
+  fetchRecommendMoviesNotInShowedBefore: (genre, moviesId) => dispatch(fetchRecommendMoviesNotInShowedBefore(genre, moviesId))
 })
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Recommendation))

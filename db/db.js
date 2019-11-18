@@ -8,7 +8,8 @@ module.exports = {
   getGenreId,
   getGenresById,
   getGenresIdByGenre,
-  getMovieIdByGenreId
+  getMovieIdByGenreId,
+  getMovieIdByGenreIdNotIncludedBefore
 }
 
 function getGenresIdByGenre (genre, db = connection) {
@@ -21,6 +22,10 @@ function getMovieById (cardId, db = connection) {
 
 function getMovieIdByGenreId (genreId, db = connection) {
   return db('movies_genres').where('genre_id', genreId).select()
+}
+
+function getMovieIdByGenreIdNotIncludedBefore (genreId, movieIds, db = connection) {
+  return db('movies_genres').where('genre_id', genreId).whereNotIn('movie_id', movieIds).select()
 }
 
 function getGenreId (movieId, db = connection) {
