@@ -18,6 +18,7 @@ export const Button = styled.button`
   margin: 0 1em;
   padding: 0 em 2.5em;
   font-size: 2rem;
+  width:250px;
   &:hover {
     cursor: pointer;
     color: black;
@@ -28,16 +29,19 @@ export const Container = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 300px;
+padding: 500px;
 `
 
 export const MovieImg = styled.img`
   height: 500px;
+  align-items: center;
 `
 
 export const Title = styled.h1`
 font-size: 2rem;
 font-family: Arial, Helvetica, sans-serif;
+height: 120px;
+text-align: center;
 `
 
 export const HomePageContainer = styled.div`
@@ -49,6 +53,8 @@ padding: 300px;
 
 export const MovieContainer = styled.div`
 align-items: center;
+text-align: center;
+
 `
 
 export const WelcomeTitle = styled.p`
