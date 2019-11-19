@@ -15,34 +15,34 @@ class MovieOption extends React.Component {
     fetchMovie(moviesId)
   }
 
-  addLikeAccount =() => {
+  addLikeCount =() => {
     this.setState({
       like: this.state.like + 1
     })
   }
 
-  addDislikeAccount =() => {
+  addDislikeCount =() => {
     this.setState({
       dislike: this.state.dislike + 1
     })
   }
   render () {
-    const { id, name, image } = this.props.movie
     const { dislike, like, count } = this.state
+    const { fetchMovieGenresByMovieId, fetchMovie, moviesId, movie: { id, name, image } } = this.props
 
     return (<Container>
-      {dislike + like >= count ? (<Recommendation></Recommendation>) : (
+      {dislike + like >= count ? (<Recommendation/>) : (
         <div className="notification">
           <MovieContainer>
             <Title>{name}</Title>
             <MovieImg src={image} alt='movieImage'/>
           </MovieContainer>
           <Button
-            onClick={() => { this.props.fetchMovieGenresByMovieId(id, 'dislike'); this.addDislikeAccount(); this.props.fetchMovie(this.props.moviesId) }}>
+            onClick={() => { fetchMovieGenresByMovieId(id, 'dislike'); this.addDislikeCount(); fetchMovie(moviesId) }}>
           👎 Dislike
           </Button>
           <Button
-            onClick={() => { this.props.fetchMovieGenresByMovieId(id, 'like'); this.addLikeAccount(); this.props.fetchMovie(this.props.moviesId) }}>
+            onClick={() => { fetchMovieGenresByMovieId(id, 'like'); this.addLikeCount(); fetchMovie(moviesId) }}>
          👍 Like
           </Button>
         </div>
