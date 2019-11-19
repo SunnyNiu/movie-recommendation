@@ -10,7 +10,7 @@ function updateMovieId (movie) {
 // async
 export function fetchMovie (moviesId) {
   return function (dispatch) {
-    return fetch(`/movie/${moviesId}`)
+    return fetch(`/movie?moviesId=${moviesId.join(',')}`)
       .then(resp => resp.json())
       .then((body) => dispatch(updateMovieId(body)))
   }

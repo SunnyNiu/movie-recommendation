@@ -15,4 +15,6 @@ class App extends React.Component {
     )
   }
 }
+
+// todo: add more data in database which more than 10 movies for each genre
 export default App

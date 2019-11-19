@@ -13,9 +13,10 @@ function getRandomInt (min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
 
-server.get('/movie/:moviesId', (req, res) => {
-  const moviesId = req.params.moviesId.split(',')
-  const id = getRandomInt(1, 32)
+server.get('/movie', (req, res) => {
+  const moviesId = req.query.moviesId ? req.query.moviesId.split(',').map(item => parseInt(item, 10)) : []
+
+  let id = getRandomInt(1, 32)
   while (moviesId.includes(id)) {
     id = getRandomInt(1, 32)
   }
@@ -23,6 +24,7 @@ server.get('/movie/:moviesId', (req, res) => {
   db.getMovieById(id)
     .then(x => res.json(x[0]))
     .catch(err => {
+      console.log('err', err)
       res.status(500).send('DATABASE ERROR:' + err.message)
     })
 })
@@ -37,22 +39,7 @@ server.get('/movieGenres/:movieId', (req, res) => {
         .then(() => db.getGenresById(array).then(z => res.json(z)))
     )
     .catch(err => {
-      res.status(500).send('DATABASE ERROR:' + err.message)
-    })
-})
-
-server.get('/recommendation/:genre', (req, res) => {
-  const genre = req.params.genre
-  db.getGenresIdByGenre(genre)
-    .then(x => {
-      console.log('x', x)
-      db.getMovieIdByGenreId(x[0].id)
-        .then(y => {
-          console.log('y', y)
-          db.getMovieById(y[0].movie_id).then(z => { console.log('z', z); res.json(z) })
-        })
-    })
-    .catch(err => {
+      console.log('err', err)
       res.status(500).send('DATABASE ERROR:' + err.message)
     })
 })
@@ -73,6 +60,7 @@ server.get('/recommendation/:genre/:moviesId', (req, res) => {
         })
     })
     .catch(err => {
+      console.log('err', err)
       res.status(500).send('DATABASE ERROR:' + err.message)
     })
 })

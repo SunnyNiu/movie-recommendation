@@ -11,8 +11,8 @@ class MovieOption extends React.Component {
     count: 10
   }
   componentDidMount () {
-    const { fetchMovie } = this.props
-    fetchMovie()
+    const { fetchMovie, moviesId } = this.props
+    fetchMovie(moviesId)
   }
 
   addLikeAccount =() => {
@@ -59,7 +59,7 @@ function mapStateToProps (state) {
   }
 }
 const mapDispatchToProps = dispatch => ({
-  fetchMovie: () => dispatch(fetchMovie()),
+  fetchMovie: (moviesId) => dispatch(fetchMovie(moviesId)),
   fetchMovieGenresByMovieId: (moveId, option) => dispatch(fetchMovieGenresByMovieId(moveId, option))
 })
 
