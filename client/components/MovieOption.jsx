@@ -5,44 +5,27 @@ import Recommendation from './Recommendation'
 import { Button, Container, MovieImg, Title, MovieContainer } from '../app.styles'
 
 class MovieOption extends React.Component {
-  state = {
-    like: 0,
-    dislike: 0,
-    count: 10
-  }
   componentDidMount () {
     const { fetchMovie, moviesId } = this.props
     fetchMovie(moviesId)
   }
 
-  addLikeCount =() => {
-    this.setState({
-      like: this.state.like + 1
-    })
-  }
-
-  addDislikeCount =() => {
-    this.setState({
-      dislike: this.state.dislike + 1
-    })
-  }
   render () {
-    const { dislike, like, count } = this.state
     const { fetchMovieGenresByMovieId, fetchMovie, moviesId, movie: { id, name, image } } = this.props
 
     return (<Container>
-      {dislike + like >= count ? (<Recommendation/>) : (
+      {moviesId.length > 10 ? (<Recommendation/>) : (
         <div className="notification">
           <MovieContainer>
             <Title>{name}</Title>
             <MovieImg src={image} alt='movieImage'/>
           </MovieContainer>
           <Button
-            onClick={() => { fetchMovieGenresByMovieId(id, 'dislike'); this.addDislikeCount(); fetchMovie(moviesId) }}>
+            onClick={() => { fetchMovieGenresByMovieId(id, 'dislike'); fetchMovie(moviesId) }}>
           👎 Dislike
           </Button>
           <Button
-            onClick={() => { fetchMovieGenresByMovieId(id, 'like'); this.addLikeCount(); fetchMovie(moviesId) }}>
+            onClick={() => { fetchMovieGenresByMovieId(id, 'like'); fetchMovie(moviesId) }}>
          👍 Like
           </Button>
         </div>
