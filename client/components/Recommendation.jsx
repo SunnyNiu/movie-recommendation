@@ -6,27 +6,24 @@ import { clearAll, fetchRecommendMoviesNotInShowedBefore } from '../../redux/mov
 
 class Recommendation extends React.Component {
   componentDidMount () {
-    const genres = this.props.genres
-    let arr = Object.values(genres)
-    let max = Math.max(...arr)
-    console.log('max', max)
+    const { fetchRecommendMoviesNotInShowedBefore, moviesId, genres } = this.props
+    const arr = Object.values(genres)
+    const max = Math.max(...arr)
     const likedGenre = Object.keys(genres).find(key => genres[key] === max)
-    console.log('likedGenre', likedGenre)
-    const { fetchRecommendMoviesNotInShowedBefore } = this.props
-    fetchRecommendMoviesNotInShowedBefore(likedGenre, this.props.moviesId)
+
+    fetchRecommendMoviesNotInShowedBefore(likedGenre, moviesId)
   }
 
   render () {
-    const { history } = this.props
+    const { history, movie: { name, image }, clearAll } = this.props
 
-    const { name, image } = this.props.movie
     return (<div className="container">
       <div className="notification">
         <MovieContainer>
           <Title>You Probably Like this Movie: {name} </Title>
           <MovieImg src={image} alt='movieImage'/>
         </MovieContainer>
-        <Button onClick={() => { history.push('/'); this.props.clearAll() }}> Back to Home! </Button>
+        <Button onClick={() => { history.push('/'); clearAll() }}> Back to Home! </Button>
       </div>
     </div>)
   }
