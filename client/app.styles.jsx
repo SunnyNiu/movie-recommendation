@@ -93,6 +93,7 @@ font-style: italic;
 font-size: 2.5rem;
 font-family: Arial, Helvetica, sans-serif;
 align-items: center;
+margin: 2em 0em
 `
 
 export const LinkContainer = styled(Link)`

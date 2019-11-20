@@ -4,9 +4,9 @@ import { HomePageContainer, WelcomeTitle, LinkContainer, HomeContainer, StartBut
 const Home = () =>
   (<HomePageContainer>
     <HomeContainer>
-      <WelcomeTitle>Welcome!!!
-        {` `}
-        We will recommend movie you probably like based on your 10 choose! Have fun!!!</WelcomeTitle>
+      <WelcomeTitle>
+        Thumbs Up/Down 10 movies
+      </WelcomeTitle>
 
       <LinkContainer to='/choosemovie' > <StartButton>Start! </StartButton></LinkContainer>
     </HomeContainer>
