@@ -15,10 +15,42 @@ export const Button = styled.button`
   border-radius: 3px;
   border: 2px solid palevioletred;
   color: palevioletred;
+  margin: 0em 1em;
+  font-size: 2rem;
+  width:250px;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    color: black;
+  }
+`
+
+export const BackToHomeButton = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
   margin: 0 1em;
   padding: 0 em 2.5em;
   font-size: 2rem;
-  width:250px;
+  width:350px;
+  text-align: center;
+  &:hover {
+    cursor: pointer;
+    color: black;
+  }
+`
+
+export const StartButton = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 2em 1em;
+  padding: 0 em 2.5em;
+  font-size: 2rem;
+  width:350px;
+  text-align: center;
   &:hover {
     cursor: pointer;
     color: black;
@@ -54,7 +86,6 @@ padding: 300px;
 export const MovieContainer = styled.div`
 align-items: center;
 text-align: center;
-
 `
 
 export const WelcomeTitle = styled.p`

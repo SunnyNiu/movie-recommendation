@@ -1,5 +1,5 @@
 import React from 'react'
-import { HomePageContainer, WelcomeTitle, LinkContainer, HomeContainer } from '../app.styles'
+import { HomePageContainer, WelcomeTitle, LinkContainer, HomeContainer, StartButton } from '../app.styles'
 
 const Home = () =>
   (<HomePageContainer>
@@ -8,7 +8,7 @@ const Home = () =>
         {` `}
         We will recommend movie you probably like based on your 10 choose! Have fun!!!</WelcomeTitle>
 
-      <LinkContainer to='/choosemovie' > Start! </LinkContainer>
+      <LinkContainer to='/choosemovie' > <StartButton>Start! </StartButton></LinkContainer>
     </HomeContainer>
   </HomePageContainer>
   )
