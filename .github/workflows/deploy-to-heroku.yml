@@ -12,7 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: movie-recommendation-1:0.1
+    - name: test
+      run: |
+        npm run test
+    - name: build
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
         APP_NAME: ${{ 'movie-recommendation-1' }}
