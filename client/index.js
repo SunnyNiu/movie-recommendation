@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import { applyMiddleware, createStore, compose } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from '../redux/movie.reducer'
-import { fetchMovie } from '../redux/movie.actions'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from './components/App'

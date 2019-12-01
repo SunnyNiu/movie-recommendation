@@ -89,7 +89,10 @@ exports.seed = function (knex) {
         { id: 83, movie_id: 31, genre_id: 8 },
         { id: 84, movie_id: 32, genre_id: 7 },
         { id: 85, movie_id: 32, genre_id: 15 },
-        { id: 86, movie_id: 32, genre_id: 17 }
+        { id: 86, movie_id: 32, genre_id: 17 },
+        { id: 87, movie_id: 33, genre_id: 21 },
+        { id: 88, movie_id: 33, genre_id: 7 },
+        { id: 89, movie_id: 33, genre_id: 12 }
       ])
     })
 }

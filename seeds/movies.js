@@ -35,7 +35,9 @@ exports.seed = function (knex) {
         { id: 29, name: 'Night of the Living Dead (1968)', image: '/images/29.png' },
         { id: 30, name: 'I Saw the Devil (2010)', image: '/images/30.png' },
         { id: 31, name: 'Spirited Away (2001)', image: '/images/31.png' },
-        { id: 32, name: 'The Prestige (2006)', image: '/images/32.png' }
+        { id: 32, name: 'The Prestige (2006)', image: '/images/32.png' },
+        { id: 33, name: 'Bone Tomahawk (2015)', image: '/images/33.png' },
+        { id: 34, name: 'The Lion King (2019)', image: '/images/35.png' }
       ])
     })
 }
