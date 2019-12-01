@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: movie-recommendation:0.1
+    - name: movie-recommendation-1:0.1
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
-        APP_NAME: ${{ 'movie-recommendation' }}
+        APP_NAME: ${{ 'movie-recommendation-1' }}
       run: |
         docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
         heroku container:push web -a $APP_NAME
