@@ -37,7 +37,25 @@ exports.seed = function (knex) {
         { id: 31, name: 'Spirited Away (2001)', image: '/images/31.png' },
         { id: 32, name: 'The Prestige (2006)', image: '/images/32.png' },
         { id: 33, name: 'Bone Tomahawk (2015)', image: '/images/33.png' },
-        { id: 34, name: 'The Lion King (2019)', image: '/images/35.png' }
+        { id: 34, name: 'The Lion King (2019)', image: '/images/34.png' },
+        { id: 35, name: 'The Irishman (2019)', image: '/images/35.png' },
+        { id: 36, name: 'Knives Out (2019)', image: '/images/36.png' },
+        { id: 37, name: 'Marriage Story (2019)', image: '/images/37.png' },
+        { id: 38, name: 'Little Women (2019)', image: '/images/38.png' },
+        { id: 39, name: 'Green Book (2018)', image: '/images/39.png' },
+        { id: 40, name: 'Logan (2017)', image: '/images/40.png' },
+        { id: 41, name: 'Hacksaw Ridge (2016)', image: '/images/41.png' },
+        { id: 42, name: 'Room (2015)', image: '/images/42.png' },
+        { id: 43, name: 'A Quiet Place (2018)', image: '/images/43.png' },
+        { id: 44, name: 'Parasite (2019)', image: '/images/44.png' },
+        { id: 45, name: 'Doctor Sleep (2019)', image: '/images/45.png' },
+        { id: 46, name: 'Rambo: Last Blood (2019)', image: '/images/46.png' },
+        { id: 47, name: 'Midsommar (2019)', image: '/images/47.png' },
+        { id: 48, name: 'Dark Waters (2019)', image: '/images/48.png' },
+        { id: 49, name: 'Dunkirk (2017)', image: '/images/49.png' },
+        { id: 50, name: '13 Hours (2016)', image: '/images/50.png' },
+        { id: 51, name: 'Never Look Away (2018)', image: '/images/51.png' },
+        { id: 52, name: 'The Impossible (2012)', image: '/images/52.png' }
       ])
     })
 }
