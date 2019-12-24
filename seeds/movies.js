@@ -55,7 +55,21 @@ exports.seed = function (knex) {
         { id: 49, name: 'Dunkirk (2017)', image: '/images/49.png' },
         { id: 50, name: '13 Hours (2016)', image: '/images/50.png' },
         { id: 51, name: 'Never Look Away (2018)', image: '/images/51.png' },
-        { id: 52, name: 'The Impossible (2012)', image: '/images/52.png' }
+        { id: 52, name: 'The Impossible (2012)', image: '/images/52.png' },
+        { id: 53, name: 'Gone Girl (2014)', image: '/images/53.png' },
+        { id: 54, name: 'Guardians of the Galaxy (2014)', image: '/images/54.png' },
+        { id: 55, name: 'Whiplash (2014)', image: '/images/55.png' },
+        { id: 56, name: 'The Wolf of Wall Street (2013)', image: '/images/56.png' },
+        { id: 57, name: 'Rush (2013)', image: '/images/57.png' },
+        { id: 58, name: 'Prisoners (2013)', image: '/images/58.png' },
+        { id: 59, name: 'Inception (2010)', image: '/images/59.png' },
+        { id: 60, name: 'How to Train Your Dragon (2010)', image: '/images/60.png' },
+        { id: 61, name: '3 Idiots (2009)', image: '/images/61.png' },
+        { id: 62, name: 'The Secret in Their Eyes (2009)', image: '/images/62.png' },
+        { id: 63, name: 'The Dark Knight (2008)', image: '/images/63.png' },
+        { id: 64, name: 'Million Dollar Baby (2004)', image: '/images/64.png' },
+        { id: 65, name: 'Downfall (2004)', image: '/images/65.png' },
+        { id: 66, name: 'Before Sunset (2004)', image: '/images/66.png' }
       ])
     })
 }

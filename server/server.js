@@ -16,9 +16,9 @@ function getRandomInt (min, max) {
 server.get('/movie', (req, res) => {
   const moviesId = req.query.moviesId ? req.query.moviesId.split(',').map(item => parseInt(item, 10)) : []
 
-  let id = getRandomInt(1, 51)
+  let id = getRandomInt(1, 66)
   while (moviesId.includes(id)) {
-    id = getRandomInt(1, 51)
+    id = getRandomInt(1, 66)
   }
 
   db.getMovieById(id)
