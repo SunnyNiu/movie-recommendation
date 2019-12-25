@@ -69,7 +69,21 @@ exports.seed = function (knex) {
         { id: 63, name: 'The Dark Knight (2008)', image: '/images/63.png' },
         { id: 64, name: 'Million Dollar Baby (2004)', image: '/images/64.png' },
         { id: 65, name: 'Downfall (2004)', image: '/images/65.png' },
-        { id: 66, name: 'Before Sunset (2004)', image: '/images/66.png' }
+        { id: 66, name: 'Before Sunset (2004)', image: '/images/66.png' },
+        { id: 67, name: 'The Lord of the Rings: The Two Towers (2002)', image: '/images/67.png' },
+        { id: 68, name: 'Spider-Man: Into the Spider-Verse (2018)', image: '/images/68.png' },
+        { id: 69, name: 'Star Wars: Episode VI - Return of the Jedi (1983)', image: '/images/69.png' },
+        { id: 70, name: 'The Hunt (2012)', image: '/images/70.png' },
+        { id: 71, name: 'Up (2009)', image: '/images/71.png' },
+        { id: 72, name: 'Ford v Ferrari (2019)', image: '/images/72.png' },
+        { id: 73, name: 'A Beautiful Mind (2001)', image: '/images/73.png' },
+        { id: 74, name: 'Marriage Story (2019)', image: '/images/74.png' },
+        { id: 75, name: 'Warrior (2011)', image: '/images/75.png' },
+        { id: 76, name: 'Shutter Island (2010)', image: '/images/76.png' },
+        { id: 77, name: 'Memories of Murder (2003)', image: '/images/77.png' },
+        { id: 78, name: 'Mad Max: Fury Road (2015)', image: '/images/78.png' },
+        { id: 79, name: 'The Help (2011)', image: '/images/79.png' },
+        { id: 80, name: 'Watchmen (2009)', image: '/images/80.png' }
       ])
     })
 }
