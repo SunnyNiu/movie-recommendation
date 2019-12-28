@@ -4,13 +4,12 @@ import Home from './Home'
 import MovieOption from './MovieOption'
 
 const App = () => (
-  <div>
+  <React.Fragment>
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/choosemovie' component={MovieOption} />
     </Switch>
-  </div>
+  </React.Fragment>
 )
 
-// todo: add more data in database which more than 10 movies for each genre
 export default App

@@ -47,7 +47,6 @@ export function fetchRecommendMovies (genre) {
     return fetch(`/recommendation/${genre}`)
       .then(resp => resp.json())
       .then((body) => {
-        console.log('body recommend movies', body)
         dispatch(updateMovieId(body[0]))
       })
   }
@@ -55,14 +54,11 @@ export function fetchRecommendMovies (genre) {
 
 // async
 export function fetchRecommendMoviesNotInShowedBefore (genre, moviesId) {
-  console.log('moviesId', moviesId)
   const moviesIds = moviesId.join(',')
-  console.log(moviesIds, 'here fetch not include showed before')
   return function (dispatch) {
     return fetch(`/recommendation/${genre}/${moviesIds}`)
       .then(resp => resp.json())
       .then((body) => {
-        console.log('body recommend movies', body)
         dispatch(updateMovieId(body[0]))
       })
   }

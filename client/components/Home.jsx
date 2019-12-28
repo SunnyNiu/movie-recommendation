@@ -7,7 +7,6 @@ const Home = () =>
       <WelcomeTitle>
         Thumbs Up/Down 10 movies
       </WelcomeTitle>
-
       <LinkContainer to='/choosemovie' > <StartButton>Start! </StartButton></LinkContainer>
     </HomeContainer>
   </HomePageContainer>
