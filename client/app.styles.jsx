@@ -22,9 +22,7 @@ export const BackToHomeButton = styled.button`
   border: 2px solid palevioletred;
   color: palevioletred;
   margin: 0 1em;
-  padding: 0 em 2.5em;
   font-size: 2rem;
-  width:350px;
   text-align: center;
   &:hover {
     cursor: pointer;
@@ -37,10 +35,7 @@ export const StartButton = styled.button`
   border-radius: 3px;
   border: 2px solid palevioletred;
   color: palevioletred;
-  margin: 2em 1em;
-  padding: 0 em 2.5em;
   font-size: 2rem;
-  width:350px;
   text-align: center;
   &:hover {
     cursor: pointer;
@@ -81,7 +76,7 @@ text-align: center;
 
 export const WelcomeTitle = styled.p`
 font-style: italic;
-font-size: 2.5rem;
+font-size: 2rem;
 font-family: Arial, Helvetica, sans-serif;
 align-items: center;
 margin: 2em 0em

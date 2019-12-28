@@ -21,9 +21,7 @@ const initialState = {
     Romance: 0,
     SciFi: 0,
     Sport: 0,
-    Thriller: 0,
-    War: 0,
-    Western: 0
+    Thriller: 0
   },
   moviesId: []
 }

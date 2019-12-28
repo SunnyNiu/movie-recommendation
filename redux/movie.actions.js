@@ -1,6 +1,6 @@
 import { searchMovie } from './movie.types'
 
-function updateMovieId (movie) {
+function showMovie (movie) {
   return {
     type: searchMovie.NEXT_MOVIE,
     movie: movie
@@ -11,8 +11,8 @@ function updateMovieId (movie) {
 export function fetchMovie (moviesId) {
   return function (dispatch) {
     return fetch(`/movie?moviesId=${moviesId.join(',')}`)
-      .then(resp => resp.json())
-      .then((body) => dispatch(updateMovieId(body)))
+      .then(res => res.json())
+      .then((body) => dispatch(showMovie(body)))
   }
 }
 
@@ -34,21 +34,10 @@ function dislikeMovie (genres) {
 export function fetchMovieGenresByMovieId (movieId, option) {
   return function (dispatch) {
     return fetch(`/movieGenres/${movieId}`)
-      .then(resp => resp.json())
+      .then(res => res.json())
       .then((body) => (
         `${option}` === 'like' ? dispatch(likeMovie(body)) : dispatch(dislikeMovie(body))
       ))
-  }
-}
-
-// async
-export function fetchRecommendMovies (genre) {
-  return function (dispatch) {
-    return fetch(`/recommendation/${genre}`)
-      .then(resp => resp.json())
-      .then((body) => {
-        dispatch(updateMovieId(body[0]))
-      })
   }
 }
 
@@ -59,7 +48,7 @@ export function fetchRecommendMoviesNotInShowedBefore (genre, moviesId) {
     return fetch(`/recommendation/${genre}/${moviesIds}`)
       .then(resp => resp.json())
       .then((body) => {
-        dispatch(updateMovieId(body[0]))
+        dispatch(showMovie(body[0]))
       })
   }
 }

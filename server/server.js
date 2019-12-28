@@ -22,7 +22,7 @@ server.get('/movie', (req, res) => {
   }
 
   db.getMovieById(id)
-    .then(x => res.json(x[0]))
+    .then(movie => res.json(movie))
     .catch(err => {
       res.status(500).send('DATABASE ERROR:' + err.message)
     })
@@ -31,12 +31,9 @@ server.get('/movie', (req, res) => {
 server.get('/movieGenres/:movieId', (req, res) => {
   const array = []
   const movieId = Number(req.params.movieId)
-  db.getMovieById(movieId)
-    .then(x =>
-      db.getGenreId(x[0].id)
-        .then(y => { y.map(genre => array.push(genre['genre_id'])) })
-        .then(() => db.getGenresById(array).then(z => res.json(z)))
-    )
+  db.getGenresId(movieId)
+    .then(genreIds => genreIds.map(genreId => array.push(genreId['genre_id'])))
+    .then(() => db.getGenresByIds(array).then(movieTypes => res.json(movieTypes)))
     .catch(err => {
       res.status(500).send('DATABASE ERROR:' + err.message)
     })
@@ -46,10 +43,10 @@ server.get('/recommendation/:genre/:moviesId', (req, res) => {
   const genre = req.params.genre
   const moviesId = req.params.moviesId.split(',')
   db.getGenresIdByGenre(genre)
-    .then(x => {
-      db.getMovieIdByGenreIdNotIncludedBefore(x[0].id, moviesId)
-        .then(y => {
-          db.getMovieById(y[0].movie_id).then(z => res.json(z))
+    .then(genreType => {
+      db.getMovieIdByGenreIdNotIncludedBefore(genreType[0].id, moviesId)
+        .then(moviesId => {
+          db.getMovieById(moviesId[0].movie_id).then(movie => res.json(movie))
         })
     })
     .catch(err => {
