@@ -10,7 +10,6 @@ class Recommendation extends React.Component {
     const arr = Object.values(genres)
     const max = Math.max(...arr)
     const likedGenre = Object.keys(genres).find(key => genres[key] === max)
-
     fetchRecommendMoviesNotInShowedBefore(likedGenre, moviesId)
   }
 

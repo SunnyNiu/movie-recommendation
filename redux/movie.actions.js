@@ -34,8 +34,9 @@ export function dislikeMovie (genres) {
 // async
 export function fetchMovieGenresByMovieId (movieId, option) {
   return function (dispatch) {
-    return fetch(`/movieGenres/${movieId}`)
-      .then(res => res.json())
+    return request
+      .get(`/movieGenres/${movieId}`)
+      .then(res => res.body)
       .then((body) => (
         `${option}` === 'like' ? dispatch(likeMovie(body)) : dispatch(dislikeMovie(body))
       ))
@@ -46,8 +47,9 @@ export function fetchMovieGenresByMovieId (movieId, option) {
 export function fetchRecommendMoviesNotInShowedBefore (genre, moviesId) {
   const moviesIds = moviesId.join(',')
   return function (dispatch) {
-    return fetch(`/recommendation/${genre}/${moviesIds}`)
-      .then(resp => resp.json())
+    return request
+      .get(`/recommendation/${genre}/${moviesIds}`)
+      .then(resp => resp.body)
       .then((body) => {
         dispatch(showMovie(body[0]))
       })
