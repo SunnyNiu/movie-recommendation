@@ -57,14 +57,16 @@ describe('action tests', () => {
 
   it('fetchMovie works well', () => {
     const scope = nock('http://localhost')
-      .get("/movie?moviesId='2,4'")
-      .reply(200, [
-        { id: 1, name: 'test user 2', email: 'test2@user.nz' },
-        { id: 2, name: 'test user 4', email: 'test4@user.nz' }
-      ])
+      .get('/movie?moviesId=2,4')
+      .reply(200, [{ id: 2, name: 'my name', image: '/images/2.png' }, { id: 3, name: 'toy story', image: '/images/4.png' }])
 
     const dispatch = jest.fn()
-    fetchMovie('2,4')(dispatch)
-      .then(() => console.log(dispatch.mock.calls))
+    return fetchMovie([2, 4])(dispatch)
+      .then(() => {
+        expect(dispatch.mock.calls.length).toBe(1)
+        expect(dispatch.mock.calls[0][0].type).toBe('NEXT_MOVIE')
+        expect(dispatch.mock.calls[0][0].movie).toEqual([{ id: 2, name: 'my name', image: '/images/2.png' }, { id: 3, name: 'toy story', image: '/images/4.png' }])
+        scope.done()
+      })
   })
 })

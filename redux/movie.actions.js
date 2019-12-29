@@ -1,3 +1,4 @@
+import request from 'superagent'
 import { searchMovie } from './movie.types'
 
 export function showMovie (movie) {
@@ -10,9 +11,9 @@ export function showMovie (movie) {
 // async
 export function fetchMovie (moviesId) {
   return function (dispatch) {
-    return fetch(`/movie?moviesId=${moviesId.join(',')}`)
-      .then(res => res.json())
-      .then((body) => dispatch(showMovie(body)))
+    return request
+      .get(`/movie?moviesId=${moviesId.join(',')}`)
+      .then((res) => dispatch(showMovie(res.body)))
   }
 }
 
