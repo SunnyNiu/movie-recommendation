@@ -35,36 +35,22 @@ export default (state = initialState, action) => {
         moviesId: [...state.moviesId, action.movie.id]
       }
     case searchMovie.LIKE_MOVIE:
-      const newGenres = {
-        ...state.genres
-      }
       action.genres.forEach(genre => {
-        if (genre.type === 'Sci-Fi') {
-          newGenres['SciFi'] = newGenres['SciFi'] + 1
-        } else {
-          newGenres[genre.type] = newGenres[genre.type] + 1
-        }
+        state.genres[genre.type] = state.genres[genre.type] + 1
       })
 
       return {
         ...state,
-        genres: newGenres
+        genres: action.genres
       }
     case searchMovie.DISLIKE_MOVIE:
-      const dislikeGenres = {
-        ...state.genres
-      }
       action.genres.forEach(genre => {
-        if (genre.type === 'Sci-Fi') {
-          dislikeGenres['SciFi'] = dislikeGenres['SciFi'] - 1
-        } else {
-          dislikeGenres[genre.type] = dislikeGenres[genre.type] - 1
-        }
+        state.genres[genre.type] = state.genres[genre.type] - 1
       })
 
       return {
         ...state,
-        genres: dislikeGenres
+        genres: action.genres
       }
     case searchMovie.CLEAR_ALLSTATE:
       return initialState

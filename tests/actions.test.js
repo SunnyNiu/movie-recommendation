@@ -10,8 +10,7 @@ import {
 } from '../redux/movie.actions'
 
 import { searchMovie } from '../redux/movie.types'
-// const nock = require('nock')
-// const api = require('../server/server')
+import nock from 'nock'
 
 describe('action tests', () => {
   it('showMovie return movie', () => {
@@ -56,15 +55,16 @@ describe('action tests', () => {
     expect(actual).toEqual(expected)
   })
 
-  // it('fetchMovie works well', () => {
-  //   const apiURL = 'http://localhost:3000 '
-  //   const expected = [
-  //     { id: 1, name: 'test user 2', email: 'test2@user.nz' },
-  //     { id: 2, name: 'test user 4', email: 'test4@user.nz' }
-  //   ]
+  it('fetchMovie works well', () => {
+    const scope = nock('http://localhost')
+      .get("/movie?moviesId='2,4'")
+      .reply(200, [
+        { id: 1, name: 'test user 2', email: 'test2@user.nz' },
+        { id: 2, name: 'test user 4', email: 'test4@user.nz' }
+      ])
 
-  //   nock(apiURL)
-  //     .get("/movie?moviesId='2,4'")
-  //     .reply(200, expected)
-  // })
+    const dispatch = jest.fn()
+    fetchMovie('2,4')(dispatch)
+      .then(() => console.log(dispatch.mock.calls))
+  })
 })

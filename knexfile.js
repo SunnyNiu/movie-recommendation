@@ -1,5 +1,4 @@
-// Update with your config settings.
-
+const path = require('path')
 module.exports = {
 
   development: {
@@ -13,7 +12,19 @@ module.exports = {
         conn.run('PRAGMA foreign_keys = ON', cb)
     }
   },
-
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: ':memory:'
+    },
+    useNullAsDefault: true,
+    migrations: {
+      directory: path.join(__dirname, 'migrations')
+    },
+    seeds: {
+      directory: path.join(__dirname, 'seeds')
+    }
+  },
   staging: {
     client: 'postgresql',
     connection: {

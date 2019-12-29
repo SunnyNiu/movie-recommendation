@@ -20,7 +20,7 @@ exports.seed = function (knex) {
         { id: 14, type: 'Musical' },
         { id: 15, type: 'Mystery' },
         { id: 16, type: 'Romance' },
-        { id: 17, type: 'Sci-Fi' },
+        { id: 17, type: 'SciFi' },
         { id: 18, type: 'Sport' },
         { id: 19, type: 'Thriller' }
       ])
