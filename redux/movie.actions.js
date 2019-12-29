@@ -1,6 +1,6 @@
 import { searchMovie } from './movie.types'
 
-function showMovie (movie) {
+export function showMovie (movie) {
   return {
     type: searchMovie.NEXT_MOVIE,
     movie: movie
@@ -16,14 +16,14 @@ export function fetchMovie (moviesId) {
   }
 }
 
-function likeMovie (genres) {
+export function likeMovie (genres) {
   return {
     type: searchMovie.LIKE_MOVIE,
     genres
   }
 }
 
-function dislikeMovie (genres) {
+export function dislikeMovie (genres) {
   return {
     type: searchMovie.DISLIKE_MOVIE,
     genres
