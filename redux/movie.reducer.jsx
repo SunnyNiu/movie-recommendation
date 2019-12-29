@@ -45,12 +45,12 @@ export default (state = initialState, action) => {
       }
     case searchMovie.DISLIKE_MOVIE:
       action.genres.forEach(genre => {
-        action.genres[genre.type] = action.genres[genre.type] - 1
+        state.genres[genre.type] = state.genres[genre.type] - 1
       })
 
       return {
         ...state,
-        genres: action.genres
+        genres: state.genres
       }
     case searchMovie.CLEAR_ALLSTATE:
       return initialState
