@@ -29,11 +29,9 @@ server.get('/movie', (req, res) => {
 })
 
 server.get('/movieGenres/:movieId', (req, res) => {
-  const array = []
   const movieId = Number(req.params.movieId)
-  db.getGenresId(movieId)
-    .then(genreIds => genreIds.map(genreId => array.push(genreId['genre_id'])))
-    .then(() => db.getGenresByIds(array).then(movieTypes => res.json(movieTypes)))
+  db.getGenresByMovieId(movieId)
+    .then(movieTypes => res.json(movieTypes))
     .catch(err => {
       res.status(500).send('DATABASE ERROR:' + err.message)
     })
