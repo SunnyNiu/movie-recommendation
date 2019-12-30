@@ -1,15 +1,16 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import MovieOption from '../../client/components/MovieOption'
-import { Button, MovieContainer, Title } from '../../client/app.styles'
+import Recommendation from '../../client/components/Recommendation'
+import { MovieContainer, Title, MovieImg, BackToHomeButton } from '../../client/app.styles'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
+import { MemoryRouter } from 'react-router'
 
 jest.mock('react-dom')
 const mockStore = configureStore([])
 
-describe('<MovieOption /> component tests', () => {
+describe('<Recommendation /> component tests', () => {
   let store
   let component
   beforeEach(() => {
@@ -43,7 +44,9 @@ describe('<MovieOption /> component tests', () => {
 
     component = renderer.create(
       <Provider store={store}>
-        <MovieOption />
+        <MemoryRouter>
+          <Recommendation />
+        </MemoryRouter>
       </Provider>
     )
   })
@@ -52,41 +55,51 @@ describe('<MovieOption /> component tests', () => {
     expect(component.toJSON()).toMatchSnapshot()
   })
 
-  it('should contains text Dislike and Like', () => {
-    const wrapper = mount(<Provider store={store}>
-      <MovieOption />
-    </Provider>)
-
-    expect(wrapper.text()).toMatch('👎 Dislike👍 Like')
-  })
-
   it('should contains <MovieContainer />', () => {
     const expected = true
     const wrapper = mount(<Provider store={store}>
-      <MovieOption />
-    </Provider>)
+      <MemoryRouter>
+        <Recommendation />
+      </MemoryRouter>
 
+    </Provider>)
     const actual = wrapper.containsMatchingElement(MovieContainer)
-    expect(actual).toBe(expected)
-  })
-
-  it('should contains <Button />', () => {
-    const expected = true
-    const wrapper = mount(<Provider store={store}>
-      <MovieOption />
-    </Provider>)
-
-    const actual = wrapper.containsMatchingElement(Button)
     expect(actual).toBe(expected)
   })
 
   it('should contains <Title />', () => {
     const expected = true
     const wrapper = mount(<Provider store={store}>
-      <MovieOption />
-    </Provider>)
+      <MemoryRouter>
+        <Recommendation />
+      </MemoryRouter>
 
+    </Provider>)
     const actual = wrapper.containsMatchingElement(Title)
+    expect(actual).toBe(expected)
+  })
+
+  it('should contains <MovieImg />', () => {
+    const expected = true
+    const wrapper = mount(<Provider store={store}>
+      <MemoryRouter>
+        <Recommendation />
+      </MemoryRouter>
+
+    </Provider>)
+    const actual = wrapper.containsMatchingElement(MovieImg)
+    expect(actual).toBe(expected)
+  })
+
+  it('should contains <BackToHomeButton />', () => {
+    const expected = true
+    const wrapper = mount(<Provider store={store}>
+      <MemoryRouter>
+        <Recommendation />
+      </MemoryRouter>
+
+    </Provider>)
+    const actual = wrapper.containsMatchingElement(BackToHomeButton)
     expect(actual).toBe(expected)
   })
 })
