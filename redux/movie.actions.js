@@ -36,7 +36,7 @@ export function fetchMovieGenresByMovieId (movieId, option) {
   return function (dispatch) {
     return request
       .get(`/movieGenres/${movieId}`)
-      .then(res => { console.log(res.body); return res.body })
+      .then(res => res.body)
       .then((body) => (
         `${option}` === 'like' ? dispatch(likeMovie(body)) : dispatch(dislikeMovie(body))
       ))

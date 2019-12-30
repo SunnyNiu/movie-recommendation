@@ -40,13 +40,8 @@ server.get('/movieGenres/:movieId', (req, res) => {
 server.get('/recommendation/:genre/:moviesId', (req, res) => {
   const genre = req.params.genre
   const moviesId = req.params.moviesId.split(',')
-  db.getGenresIdByGenre(genre)
-    .then(genreType => {
-      db.getMovieIdByGenreIdNotIncludedBefore(genreType[0].id, moviesId)
-        .then(moviesId => {
-          db.getMovieById(moviesId[0].movie_id).then(movie => res.json(movie))
-        })
-    })
+  db.getMoviesByChosedTypes(genre, moviesId)
+    .then(movie => res.json(movie))
     .catch(err => {
       res.status(500).send('DATABASE ERROR:' + err.message)
     })
