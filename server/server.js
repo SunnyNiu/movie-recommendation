@@ -40,7 +40,7 @@ server.get('/movieGenres/:movieId', (req, res) => {
 server.get('/recommendation/:genre/:moviesId', (req, res) => {
   const genre = req.params.genre
   const moviesId = req.params.moviesId.split(',')
-  db.getMoviesByChosedTypes(genre, moviesId)
+  db.getMoviesByChosenTypes(genre, moviesId)
     .then(movie => res.json(movie))
     .catch(err => {
       res.status(500).send('DATABASE ERROR:' + err.message)

@@ -10,7 +10,7 @@ module.exports = {
   getMovieIdByGenreId,
   getMovieIdByGenreIdNotIncludedBefore,
   getGenresByMovieId,
-  getMoviesByChosedTypes
+  getMoviesByChosenTypes
 }
 
 function getGenresIdByGenre (genre, db = connection) {
@@ -44,11 +44,12 @@ function getGenresByMovieId (movieId, db = connection) {
     .select('genres.id as id', 'genres.type as type')
 }
 
-function getMoviesByChosedTypes (genre, moviesId, db = connection) {
+function getMoviesByChosenTypes (genre, moviesId, db = connection) {
   return db('movies_genres')
     .join('genres', 'genres.id', 'movies_genres.genre_id')
     .join('movies', 'movies.id', 'movies_genres.movie_id')
     .where('genres.type', genre)
     .whereNotIn('movies_genres. movie_id', moviesId)
-    .select('movies.id as id', 'movies.name as name', 'movies.img as img')
+    .select('movies.id as id', 'movies.name as name', 'movies.image as image')
+    .first()
 }

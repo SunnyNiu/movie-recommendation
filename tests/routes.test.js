@@ -4,7 +4,7 @@ const server = require('../server/server')
 
 const mockGetMovieById = { id: 2, name: 'Test2', image: './image1.png' }
 
-const mockGetMoviesByChosedTypes = { id: 2, name: 'Test2', image: './image1.png' }
+const mockGetMoviesByChosenTypes = { id: 1, name: 'Joker (I) (2019)', image: '/images/1.png' }
 
 const mockGetGenresByMovieId = [
   { id: 4, type: 'Biography' },
@@ -13,7 +13,7 @@ const mockGetGenresByMovieId = [
 
 jest.mock('../db/db', () => ({
   getMovieById: (movieId) => Promise.resolve(mockGetMovieById),
-  getMoviesByChosedTypes: (genre, moviesId) => Promise.resolve(mockGetMoviesByChosedTypes),
+  getMoviesByChosenTypes: (genre, moviesId) => Promise.resolve(mockGetMoviesByChosenTypes),
   getGenresByMovieId: (genreIds) => Promise.resolve(mockGetGenresByMovieId)
 }))
 
@@ -40,9 +40,9 @@ describe('get movie genres by movieId', () => {
 describe('get recommended movie base on choosed movies', () => {
   it('GET /recommendation/:genre/:moviesId', () => {
     return request(server)
-      .get('/recommendation/4/2')
+      .get('/recommendation/Drama/35,34,49,79,61,8,39,42,63,57,46')
       .then((res) => {
-        expect(res.body).toEqual(mockGetMoviesByChosedTypes)
+        expect(res.body).toEqual(mockGetMoviesByChosenTypes)
       })
   })
 })

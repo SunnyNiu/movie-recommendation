@@ -88,4 +88,32 @@ describe('movies database tests', () => {
         expect(actual).toEqual(expected)
       )
   })
+
+  it('getGenresByMovieId returns the correct genres', () => {
+    expect.assertions(1)
+
+    const movieId = 3
+    const expected = [ { id: 1, type: 'Action' },
+      { id: 2, type: 'Adventure' },
+      { id: 8, type: 'Fantasy' }
+    ]
+
+    return db.getGenresByMovieId(movieId, testDb)
+      .then(actual =>
+        expect(actual).toEqual(expected)
+      )
+  })
+
+  it('getMoviesByChosedTypes returns the recommended movie', () => {
+    expect.assertions(1)
+
+    const moviesId = [3, 5, 1]
+    const genre = 'Adventure'
+    const expected = { id: 2, name: 'The Incredible Hulk (2008)', image: '/images/2.png' }
+
+    return db.getMoviesByChosedTypes(genre, moviesId, testDb)
+      .then(actual =>
+        expect(actual[0]).toEqual(expected)
+      )
+  })
 })

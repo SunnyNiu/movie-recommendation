@@ -51,7 +51,7 @@ export function fetchRecommendMoviesNotInShowedBefore (genre, moviesId) {
       .get(`/recommendation/${genre}/${moviesIds}`)
       .then(resp => resp.body)
       .then((body) => {
-        dispatch(showMovie(body[0]))
+        dispatch(showMovie(body))
       })
   }
 }
