@@ -1,14 +1,18 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import Home from './Home'
 import MovieOption from './MovieOption'
+import Nav from './Nav'
 
 const App = () => (
   <React.Fragment>
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/choosemovie' component={MovieOption} />
-    </Switch>
+    <Router>
+      <Route path='/' component={Nav} />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/choosemovie' component={MovieOption} />
+      </Switch>
+    </Router>
   </React.Fragment>
 )
 

@@ -5,7 +5,7 @@ const Home = () =>
   (<HomePageContainer>
     <HomeContainer>
       <WelcomeTitle>
-        Thumbs Up/Down 10 movies
+        Thumbs Up/Down 10 movies, we will recommend movies that you may like.
       </WelcomeTitle>
       <LinkContainer to='/choosemovie' > <StartButton>Start! </StartButton></LinkContainer>
     </HomeContainer>
