@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchMovie, fetchMovieGenresByMovieId } from '../../redux/movie.actions'
 import Recommendation from './Recommendation'
-import { Button, Container, MovieImg, Title, MovieContainer } from '../app.styles'
+import { Button, Title } from '../Home.styles'
 
 class MovieOption extends React.Component {
   componentDidMount () {
@@ -13,13 +13,13 @@ class MovieOption extends React.Component {
   render () {
     const { fetchMovieGenresByMovieId, fetchMovie, moviesId, movie: { id, name, image } } = this.props
 
-    return (<Container>
+    return (<div>
       {moviesId.length > 10 ? (<Recommendation/>) : (
         <div className="notification">
-          <MovieContainer>
+          <div>
             <Title>{name}</Title>
-            <MovieImg src={image} alt='movieImage'/>
-          </MovieContainer>
+            <img src={image} alt='movieImage'/>
+          </div>
           <Button
             onClick={() => { fetchMovieGenresByMovieId(id, 'dislike'); fetchMovie(moviesId) }}>
           👎 Dislike
@@ -30,7 +30,7 @@ class MovieOption extends React.Component {
           </Button>
         </div>
       )}
-    </Container>)
+    </div>)
   }
 }
 

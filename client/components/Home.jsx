@@ -1,14 +1,12 @@
 import React from 'react'
-import { HomePageContainer, WelcomeTitle, LinkContainer, HomeContainer, StartButton } from '../app.styles'
+import { HomePageContainer, WelcomeTitle, LinkContainer, StartButton } from '../Home.styles'
 
 const Home = () =>
   (<HomePageContainer>
-    <HomeContainer>
-      <WelcomeTitle>
-        Thumbs Up/Down 10 movies, we will recommend movies that you may like.
-      </WelcomeTitle>
-      <LinkContainer to='/choosemovie' > <StartButton>Start! </StartButton></LinkContainer>
-    </HomeContainer>
+    <WelcomeTitle>
+        Thumbs Up/Skip 10 movies, we will recommend movies that you may like.
+    </WelcomeTitle>
+    <LinkContainer to='/choosemovie' > <StartButton>Start! </StartButton></LinkContainer>
   </HomePageContainer>
   )
 

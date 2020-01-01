@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from '../nav.styles'
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from '../Nav.styles'
 
 const Header = () => (
   <HeaderContainer>

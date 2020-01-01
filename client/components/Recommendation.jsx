@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { MovieContainer, Title, MovieImg, BackToHomeButton } from '../app.styles'
+import { Title, BackToHomeButton } from '../Home.styles'
 import { withRouter } from 'react-router-dom'
 import { clearAll, fetchRecommendMoviesNotInShowedBefore } from '../../redux/movie.actions'
 
@@ -18,10 +18,8 @@ class Recommendation extends React.Component {
 
     return (<div className="container">
       <div className="notification">
-        <MovieContainer>
-          <Title>You Probably Like this Movie: {name} </Title>
-          <MovieImg src={image} alt='movieImage'/>
-        </MovieContainer>
+        <Title>You Probably Like this Movie: {name} </Title>
+        <img src={image} alt='movieImage'/>
         <BackToHomeButton onClick={() => { history.push('/'); clearAll() }}> Back to Home! </BackToHomeButton>
       </div>
     </div>)
