@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchMovie, fetchMovieGenresByMovieId } from '../../redux/movie.actions'
 import Recommendation from './Recommendation'
-import { Button, Title } from '../Home.styles'
+import { Button, Title, MovieContainer, Container, ButtonContainer, Img } from '../MovieOption.styles'
 
 class MovieOption extends React.Component {
   componentDidMount () {
@@ -13,24 +13,26 @@ class MovieOption extends React.Component {
   render () {
     const { fetchMovieGenresByMovieId, fetchMovie, moviesId, movie: { id, name, image } } = this.props
 
-    return (<div>
+    return (<Container>
       {moviesId.length > 10 ? (<Recommendation/>) : (
-        <div className="notification">
+        <MovieContainer>
           <div>
             <Title>{name}</Title>
-            <img src={image} alt='movieImage'/>
+            <Img src={image} alt='movieImage'/>
           </div>
-          <Button
-            onClick={() => { fetchMovieGenresByMovieId(id, 'dislike'); fetchMovie(moviesId) }}>
+          <ButtonContainer>
+            <Button
+              onClick={() => { fetchMovieGenresByMovieId(id, 'dislike'); fetchMovie(moviesId) }}>
           👎 Dislike
-          </Button>
-          <Button
-            onClick={() => { fetchMovieGenresByMovieId(id, 'like'); fetchMovie(moviesId) }}>
+            </Button>
+            <Button
+              onClick={() => { fetchMovieGenresByMovieId(id, 'like'); fetchMovie(moviesId) }}>
          👍 Like
-          </Button>
-        </div>
+            </Button>
+          </ButtonContainer>
+        </MovieContainer>
       )}
-    </div>)
+    </Container>)
   }
 }
 

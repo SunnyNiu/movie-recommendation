@@ -47,17 +47,16 @@ flex-direction: column;
 align-items: center;
 `
 
+export const LinkContainer = styled(Link)`
+height: 100%;
+align-items: center;
+font-size: 1.5rem;
+font-style: italic;
+`
 export const WelcomeTitle = styled.p`
 font-style: italic;
 font-size: 2rem;
 font-family: Arial, Helvetica, sans-serif;
 align-items: center;
 margin: 2em 0em
-`
-
-export const LinkContainer = styled(Link)`
-height: 100%;
-align-items: center;
-font-size: 1.5rem;
-font-style: italic;
 `

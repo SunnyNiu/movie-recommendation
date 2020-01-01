@@ -5,7 +5,7 @@ import MovieOption from './MovieOption'
 import Nav from './Nav'
 
 const App = () => (
-  <React.Fragment>
+  <div>
     <Router>
       <Route path='/' component={Nav} />
       <Switch>
@@ -13,7 +13,7 @@ const App = () => (
         <Route exact path='/choosemovie' component={MovieOption} />
       </Switch>
     </Router>
-  </React.Fragment>
+  </div>
 )
 
 export default App
