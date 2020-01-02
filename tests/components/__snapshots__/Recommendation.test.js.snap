@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Recommendation /> component tests should render with given state from Redux store 1`] = `
+<div
+  className="sc-bwzfXH eJzIwm"
+>
+  <h1
+    className="sc-EHOje kKJqOx"
+  >
+    You Probably Like these Movies:
+  </h1>
+  
+  <button
+    className="sc-bdVaJa ljQCeF"
+    onClick={[Function]}
+  >
+     Back to Home! 
+  </button>
+</div>
+`;
