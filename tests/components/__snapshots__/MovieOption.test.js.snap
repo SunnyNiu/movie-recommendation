@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovieOption /> component tests should render with given state from Redux store 1`] = `
+<div
+  className="sc-VigVT hjRoCW"
+>
+  <div
+    className="sc-gqjmRU btNQjt"
+  >
+    <div>
+      <h1
+        className="sc-jzJRlG kzCvEm"
+      />
+      <img
+        alt="movieImage"
+        className="sc-fjdhpX encGXe"
+      />
+    </div>
+    <div
+      className="sc-jTzLTM hkFqJX"
+    >
+      <button
+        className="sc-gZMcBi iloSXS"
+        onClick={[Function]}
+      >
+        🤲 Skip
+      </button>
+      <button
+        className="sc-gZMcBi iloSXS"
+        onClick={[Function]}
+      >
+        👍 Like
+      </button>
+    </div>
+  </div>
+</div>
+`;
