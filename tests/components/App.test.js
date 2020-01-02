@@ -1,10 +1,10 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import App from '../../client/components/App'
 import Home from '../../client/components/Home'
 import MovieOption from '../../client/components/MovieOption'
+import Nav from '../../client/components/Nav'
 import { MemoryRouter } from 'react-router'
-
 jest.mock('../../client/components/app')
 
 describe('<App /> component tests', () => {
@@ -14,6 +14,8 @@ describe('<App /> component tests', () => {
         <App/>
       </MemoryRouter>
     )
+
+    expect(wrapper.find(Nav)).toHaveLength(1)
     expect(wrapper.find(Home)).toHaveLength(0)
     expect(wrapper.find(MovieOption)).toHaveLength(0)
   })
@@ -25,5 +27,20 @@ describe('<App /> component tests', () => {
       </MemoryRouter>
     )
     expect(wrapper.find(Home)).toHaveLength(1)
+  })
+
+  it('renders <App /> contains <BrowserRouter />', () => {
+    const expected = '<BrowserRouter />'
+
+    const wrapper = shallow(<App/>)
+    const actual = wrapper.text()
+    expect(actual).toMatch(expected)
+  })
+
+  it('should contains <Nav />', () => {
+    const expected = true
+    const wrapper = mount(<App/>)
+    const actual = wrapper.containsMatchingElement(Nav)
+    expect(actual).toBe(expected)
   })
 })

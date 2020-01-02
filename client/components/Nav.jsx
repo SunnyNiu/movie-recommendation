@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from '../Nav.styles'
 
 const Header = () => (
@@ -17,4 +16,4 @@ const Header = () => (
   </HeaderContainer>
 )
 
-export default connect(null)(Header)
+export default Header
