@@ -12,8 +12,9 @@ width: 100%;
 display: flex;
 justify-content: space-between;
 margin-bottom: 25px;
-background-color:  #343a40 !important;
-font-size:1.5rem
+background-color:  #635e4f !important;
+font-size:1.5rem;
+color: #F8F3F3 !important;
 `
 
 export const LogoContainer = styled(Link)`

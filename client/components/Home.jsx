@@ -4,7 +4,7 @@ import { HomePageContainer, WelcomeTitle, LinkContainer, StartButton } from '../
 const Home = () =>
   (<HomePageContainer>
     <WelcomeTitle>
-        Thumbs Up/Skip 10 movies, we will recommend movies that you may like.
+        Thumbs Up/Skip 10 movies, we will recommend 20 movies that you may like.
     </WelcomeTitle>
     <LinkContainer to='/choosemovie' > <StartButton>Start! </StartButton></LinkContainer>
   </HomePageContainer>

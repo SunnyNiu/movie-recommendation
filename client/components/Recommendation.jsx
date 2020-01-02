@@ -1,26 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Title, Button, MovieContainer, Img } from '../Recommendation.styles'
+import { Title, Button, MovieContainer } from '../Recommendation.styles'
 import { withRouter } from 'react-router-dom'
-import { clearAll, fetchRecommendMoviesNotInShowedBefore } from '../../redux/movie.actions'
+import { clearAll, fetchRecommendMoviesCreator } from '../../redux/movie.actions'
+import Movie from './Movie'
 
 class Recommendation extends React.Component {
   componentDidMount () {
-    const { fetchRecommendMoviesNotInShowedBefore, moviesId, genres } = this.props
-    const arr = Object.values(genres)
-    const max = Math.max(...arr)
-    const likedGenre = Object.keys(genres).find(key => genres[key] === max)
-    fetchRecommendMoviesNotInShowedBefore(likedGenre, moviesId)
+    this.props.fetchRecommendMovies(this.props.likedMovies)
   }
 
   render () {
-    const { history, movie: { name, image }, clearAll } = this.props
+    const { history, movies, clearAll } = this.props
+    const recommendMovies = movies[0]
+    return (
+      <MovieContainer>
+        <Title>You Probably Like these Movies:</Title>
 
-    return (<MovieContainer>
-      <Title>You Probably Like this Movie: {name} </Title>
-      <Img src={image} alt='movieImage'/>
-      <Button onClick={() => { history.push('/'); clearAll() }}> Back to Home! </Button>
-    </MovieContainer>)
+        {recommendMovies === undefined ? ''
+          : <div>
+            {recommendMovies.map((movie, index) => <Movie key={index} movie={movie}></Movie>)}
+          </div>
+        }
+
+        <Button onClick={() => { history.push('/'); clearAll() }}> Back to Home! </Button>
+      </MovieContainer>
+    )
   }
 }
 
@@ -28,12 +33,14 @@ function mapStateToProps (state) {
   return {
     genres: state.genres,
     movie: state.movie,
-    moviesId: state.moviesId
+    moviesId: state.moviesId,
+    likedMovies: state.likedMovies,
+    movies: state.movies
   }
 }
 
 const mapDispatchToProps = dispatch => ({
   clearAll: () => dispatch(clearAll()),
-  fetchRecommendMoviesNotInShowedBefore: (genre, moviesId) => dispatch(fetchRecommendMoviesNotInShowedBefore(genre, moviesId))
+  fetchRecommendMovies: (movies) => dispatch(fetchRecommendMoviesCreator(movies))
 })
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Recommendation))

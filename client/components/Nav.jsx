@@ -5,7 +5,7 @@ import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from '..
 const Header = () => (
   <HeaderContainer>
     <LogoContainer to="/">
-      Tasted Movie
+      Recommended Movies
     </LogoContainer>
 
     <OptionsContainer>

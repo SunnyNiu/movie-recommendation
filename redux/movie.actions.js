@@ -1,5 +1,6 @@
 import request from 'superagent'
 import { searchMovie } from './movie.types'
+import * as api from '../client/api/recommendedMovies'
 
 export function showMovie (movie) {
   return {
@@ -8,8 +9,15 @@ export function showMovie (movie) {
   }
 }
 
+export function movies (movies) {
+  return {
+    type: searchMovie.SHOW_MOVIES,
+    movies: movies
+  }
+}
+
 // async
-export function fetchMovie (moviesId) {
+export function fetchMovieCreator (moviesId) {
   return function (dispatch) {
     return request
       .get(`/movie?moviesId=${moviesId.join(',')}`)
@@ -17,20 +25,20 @@ export function fetchMovie (moviesId) {
   }
 }
 
-export function likeMovie (genres) {
+export function likeMovieCreator (name) {
   return {
     type: searchMovie.LIKE_MOVIE,
-    genres
+    name: name
   }
 }
 
 // async
-export function fetchMovieGenresByMovieId (movieId) {
+export function fetchMovieGenresByMovieIdCreator (movieId) {
   return function (dispatch) {
     return request
       .get(`/movieGenres/${movieId}`)
       .then(res => res.body)
-      .then((body) => dispatch(likeMovie(body))
+      .then((body) => dispatch(likeMovieCreator(body))
       )
   }
 }
@@ -45,6 +53,14 @@ export function fetchRecommendMoviesNotInShowedBefore (genre, moviesId) {
       .then((body) => {
         dispatch(showMovie(body))
       })
+  }
+}
+
+export function fetchRecommendMoviesCreator (likedMovies) {
+  console.log('likedMovies in movie.action.js', likedMovies)
+  return function (dispatch) {
+    return api.getRecommendedMovies(likedMovies)
+      .then(body => { console.log('body.Similar.Results', body.Similar.Results); dispatch(movies(body.Similar.Results)) })
   }
 }
 

@@ -36,8 +36,27 @@ export const Img = styled.img`
 export const Title = styled.h1`
 font-style: italic;
 font-size: 1rem;
-font-family: Arial, Helvetica, sans-serif;
+font-family: Andale Mono, monospace;
 text-align: center;
 align-items: center;
 margin: 1em 0em
+`
+
+export const RecommendMovies = styled.div`
+font-family: 'Roboto', arial;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+export const UL = styled.ul`
+align-items: center;
+`
+
+export const MovieList = styled.div`
+font-size: 1rem;
+margin:1rem;
+padding:2px;
+align-items: center;
+text-align: center;
+font-family: Andale Mono, monospace;
 `

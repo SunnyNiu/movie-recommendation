@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchMovie, fetchMovieGenresByMovieId } from '../../redux/movie.actions'
+import { fetchMovieCreator, likeMovieCreator } from '../../redux/movie.actions'
 import Recommendation from './Recommendation'
 import { Button, Title, MovieContainer, Container, ButtonContainer, Img } from '../MovieOption.styles'
 
@@ -11,7 +11,7 @@ class MovieOption extends React.Component {
   }
 
   render () {
-    const { fetchMovieGenresByMovieId, fetchMovie, moviesId, movie: { id, name, image } } = this.props
+    const { fetchMovie, moviesId, likeMovie, movie: { id, name, image } } = this.props
 
     return (<Container>
       {moviesId.length > 10 ? (<Recommendation/>) : (
@@ -26,7 +26,7 @@ class MovieOption extends React.Component {
               🤲 Skip
             </Button>
             <Button
-              onClick={() => { fetchMovieGenresByMovieId(id); fetchMovie(moviesId) }}>
+              onClick={() => { likeMovie(name); fetchMovie(moviesId) }}>
          👍 Like
             </Button>
           </ButtonContainer>
@@ -39,13 +39,13 @@ class MovieOption extends React.Component {
 function mapStateToProps (state) {
   return {
     movie: state.movie,
-    genres: state.genres,
-    moviesId: state.moviesId
+    moviesId: state.moviesId,
+    likedMovies: state.likeMovies
   }
 }
 const mapDispatchToProps = dispatch => ({
-  fetchMovie: (moviesId) => dispatch(fetchMovie(moviesId)),
-  fetchMovieGenresByMovieId: (moveId, option) => dispatch(fetchMovieGenresByMovieId(moveId, option))
+  fetchMovie: (moviesId) => dispatch(fetchMovieCreator(moviesId)),
+  likeMovie: (name) => dispatch(likeMovieCreator(name))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieOption)
