@@ -9,7 +9,7 @@ class Movie extends React.Component {
     return (
       <MovieList>
         <label>Movie:{Name}</label>
-        <Grid columns={2}>
+        <Grid columns="420px 1fr">
           <Cell minWidth="450px" center={'right'}>
             <iframe src={yUrl}
               width="400" height="300" frameBorder="0" allowFullScreen></iframe>
