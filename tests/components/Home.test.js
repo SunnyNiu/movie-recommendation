@@ -4,9 +4,6 @@ import Home from '../../client/components/Home'
 import { MemoryRouter } from 'react-router'
 import { WelcomeTitle, LinkContainer, StartButton } from '../../client/Home.styles'
 
-jest.mock('react-dom')
-// jest.mock('../../client/components/Home')
-
 describe('<Home /> component tests', () => {
   it('Home contains Start button', () => {
     const wrapper = mount(
