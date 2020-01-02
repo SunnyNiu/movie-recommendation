@@ -3,7 +3,6 @@ const express = require('express')
 const db = require('../db/db')
 
 const router = express.Router()
-
 router.use(express.json())
 
 const url = 'https://tastedive.com/api/similar?q='
@@ -30,25 +29,6 @@ router.get('/movie', (req, res) => {
     })
 })
 
-router.get('/movieGenres/:movieId', (req, res) => {
-  const movieId = Number(req.params.movieId)
-  db.getGenresByMovieId(movieId)
-    .then(movieTypes => res.json(movieTypes))
-    .catch(err => {
-      res.status(500).send('DATABASE ERROR:' + err.message)
-    })
-})
-
-router.get('/recommendation/:genre/:moviesId', (req, res) => {
-  const genre = req.params.genre
-  const moviesId = req.params.moviesId.split(',')
-  db.getMoviesByChosenTypes(genre, moviesId)
-    .then(movie => res.json(movie))
-    .catch(err => {
-      res.status(500).send('DATABASE ERROR:' + err.message)
-    })
-})
-
 router.get('/movies/:moviesId', (req, res) => {
   const moviesId = req.params.moviesId
   db.getMoviesByIds(moviesId)
@@ -60,10 +40,8 @@ router.get('/movies/:moviesId', (req, res) => {
 
 router.get('/recommendmovies/:likedmovies', (req, res) => {
   const likedmovies = req.params.likedmovies
-  console.log('likedmovies in server 65', likedmovies)
   request
-    .get(`https://tastedive.com/api/similar?q=${likedmovies}&info=1&type=movie&verbose=1&k=${APIKey}`)
-    // .set('Access-Control-Allow-Origin', '*')
+    .get(`${url}${likedmovies}&info=1&type=movie&verbose=1&k=${APIKey}`)
     .end((err, result) => {
       if (err) {
         res.status(500).send(err.message)

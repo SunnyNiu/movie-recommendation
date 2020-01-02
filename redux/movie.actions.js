@@ -43,24 +43,10 @@ export function fetchMovieGenresByMovieIdCreator (movieId) {
   }
 }
 
-// async
-export function fetchRecommendMoviesNotInShowedBefore (genre, moviesId) {
-  const moviesIds = moviesId.join(',')
-  return function (dispatch) {
-    return request
-      .get(`/recommendation/${genre}/${moviesIds}`)
-      .then(resp => resp.body)
-      .then((body) => {
-        dispatch(showMovie(body))
-      })
-  }
-}
-
 export function fetchRecommendMoviesCreator (likedMovies) {
-  console.log('likedMovies in movie.action.js', likedMovies)
   return function (dispatch) {
     return api.getRecommendedMovies(likedMovies)
-      .then(body => { console.log('body.Similar.Results', body.Similar.Results); dispatch(movies(body.Similar.Results)) })
+      .then(body => dispatch(movies(body.Similar.Results)))
   }
 }
 

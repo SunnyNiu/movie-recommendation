@@ -41,12 +41,6 @@ export const StartButton = styled.button`
   }
 `
 
-export const HomePageContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-`
-
 export const LinkContainer = styled(Link)`
 height: 100%;
 align-items: center;

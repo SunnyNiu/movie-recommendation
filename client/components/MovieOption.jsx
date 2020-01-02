@@ -11,7 +11,7 @@ class MovieOption extends React.Component {
   }
 
   render () {
-    const { fetchMovie, moviesId, likeMovie, movie: { id, name, image } } = this.props
+    const { fetchMovie, moviesId, likeMovie, movie: { name, image } } = this.props
 
     return (<Container>
       {moviesId.length > 10 ? (<Recommendation/>) : (
@@ -27,7 +27,7 @@ class MovieOption extends React.Component {
             </Button>
             <Button
               onClick={() => { likeMovie(name); fetchMovie(moviesId) }}>
-         👍 Like
+              👍 Like
             </Button>
           </ButtonContainer>
         </MovieContainer>
