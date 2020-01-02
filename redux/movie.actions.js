@@ -1,4 +1,3 @@
-import request from 'superagent'
 import { searchMovie } from './movie.types'
 import * as api from '../client/api/recommendedMovies'
 
@@ -19,9 +18,8 @@ export function movies (movies) {
 // async
 export function fetchMovieCreator (moviesId) {
   return function (dispatch) {
-    return request
-      .get(`/movie?moviesId=${moviesId.join(',')}`)
-      .then((res) => dispatch(showMovie(res.body)))
+    return api.getMoviesByIds(moviesId)
+      .then(movies => dispatch(showMovie(movies)))
   }
 }
 
@@ -29,17 +27,6 @@ export function likeMovieCreator (name) {
   return {
     type: searchMovie.LIKE_MOVIE,
     name: name
-  }
-}
-
-// async
-export function fetchMovieGenresByMovieIdCreator (movieId) {
-  return function (dispatch) {
-    return request
-      .get(`/movieGenres/${movieId}`)
-      .then(res => res.body)
-      .then((body) => dispatch(likeMovieCreator(body))
-      )
   }
 }
 

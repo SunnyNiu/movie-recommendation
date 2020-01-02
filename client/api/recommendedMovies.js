@@ -9,3 +9,12 @@ export function getRecommendedMovies (movies) {
       throw Error('You need to implement an API route for /movies/recommendmovies')
     })
 }
+
+export function getMoviesByIds (moviesId) {
+  return request
+    .get(`/movie?moviesId=${moviesId.join(',')}`)
+    .then(response => response.body)
+    .catch(() => {
+      throw Error('You need to implement an API route for /movie?moviesId=${moviesId.join(', ')}')
+    })
+}
