@@ -70,43 +70,6 @@ describe('movieReducer tests', () => {
     expect(actual).toEqual(expected)
   })
 
-  it('dislikemovie that the genre will reduce 1 correctly', () => {
-    const currentState = {
-      movie: { id: 3, name: 'A Quiet Place Part II', image: './image3.png' },
-      genres: {
-        Action: 1,
-        Adventure: 0,
-        Animation: 0,
-        Biography: 0,
-        Horror: 0,
-        SciFi: 0,
-        Thriller: 0
-      },
-      moviesId: [2]
-    }
-
-    const genres = [{ id: 6, type: 'Horror' }, { id: 7, type: 'Thriller' }]
-    const action = {
-      type: searchMovie.DISLIKE_MOVIE,
-      genres: genres
-    }
-    const expected = {
-      movie: { id: 3, name: 'A Quiet Place Part II', image: './image3.png' },
-      genres: {
-        Action: 1,
-        Adventure: 0,
-        Animation: 0,
-        Biography: 0,
-        Horror: -1,
-        SciFi: 0,
-        Thriller: -1
-      },
-      moviesId: [2]
-    }
-    const actual = movieReducer(currentState, action)
-    expect(actual).toEqual(expected)
-  })
-
   it('clearall state works well', () => {
     const currentState = {
       movie: { id: 3, name: 'A Quiet Place Part II', image: './image3.png' },

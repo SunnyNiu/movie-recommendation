@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import MovieOption from '../../client/components/MovieOption'
-import { Button, MovieContainer, Title } from '../../client/app.styles'
+import { Button, Title, MovieContainer, Container, ButtonContainer, Img } from '../MovieOption.styles'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
@@ -52,12 +52,12 @@ describe('<MovieOption /> component tests', () => {
     expect(component.toJSON()).toMatchSnapshot()
   })
 
-  it('should contains text Dislike and Like', () => {
+  it('should contains text Skip and Like', () => {
     const wrapper = mount(<Provider store={store}>
       <MovieOption />
     </Provider>)
 
-    expect(wrapper.text()).toMatch('👎 Dislike👍 Like')
+    expect(wrapper.text()).toMatch('🤲 Skip👍 Like')
   })
 
   it('should contains <MovieContainer />', () => {
@@ -87,6 +87,26 @@ describe('<MovieOption /> component tests', () => {
     </Provider>)
 
     const actual = wrapper.containsMatchingElement(Title)
+    expect(actual).toBe(expected)
+  })
+
+  it('should contains <ButtonContainer />', () => {
+    const expected = true
+    const wrapper = mount(<Provider store={store}>
+      <MovieOption />
+    </Provider>)
+
+    const actual = wrapper.containsMatchingElement(ButtonContainer)
+    expect(actual).toBe(expected)
+  })
+
+  it('should contains <Img />', () => {
+    const expected = true
+    const wrapper = mount(<Provider store={store}>
+      <MovieOption />
+    </Provider>)
+
+    const actual = wrapper.containsMatchingElement(Img)
     expect(actual).toBe(expected)
   })
 })

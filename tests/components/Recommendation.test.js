@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import Recommendation from '../../client/components/Recommendation'
-import { MovieContainer, Title, MovieImg, BackToHomeButton } from '../../client/app.styles'
+import { Title, Button, MovieContainer, Img } from '../Recommendation.styles'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
@@ -79,7 +79,7 @@ describe('<Recommendation /> component tests', () => {
     expect(actual).toBe(expected)
   })
 
-  it('should contains <MovieImg />', () => {
+  it('should contains <Img />', () => {
     const expected = true
     const wrapper = mount(<Provider store={store}>
       <MemoryRouter>
@@ -87,11 +87,11 @@ describe('<Recommendation /> component tests', () => {
       </MemoryRouter>
 
     </Provider>)
-    const actual = wrapper.containsMatchingElement(MovieImg)
+    const actual = wrapper.containsMatchingElement(Img)
     expect(actual).toBe(expected)
   })
 
-  it('should contains <BackToHomeButton />', () => {
+  it('should contains <Button />', () => {
     const expected = true
     const wrapper = mount(<Provider store={store}>
       <MemoryRouter>
@@ -99,7 +99,7 @@ describe('<Recommendation /> component tests', () => {
       </MemoryRouter>
 
     </Provider>)
-    const actual = wrapper.containsMatchingElement(BackToHomeButton)
+    const actual = wrapper.containsMatchingElement(Button)
     expect(actual).toBe(expected)
   })
 })

@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import Home from '../../client/components/Home'
 import { MemoryRouter } from 'react-router'
-import { HomePageContainer, WelcomeTitle, LinkContainer, HomeContainer, StartButton } from '../../client/app.styles'
+import { HomePageContainer, WelcomeTitle, LinkContainer, StartButton } from '../Home.styles'
 
 jest.mock('react-dom')
 // jest.mock('../../client/components/Home')
@@ -60,18 +60,6 @@ describe('<Home /> component tests', () => {
     )
 
     const actual = wrapper.containsMatchingElement(LinkContainer)
-    expect(actual).toBe(expected)
-  })
-
-  it('should contains <HomeContainer />', () => {
-    const expected = true
-    const wrapper = mount(
-      <MemoryRouter>
-        <Home />
-      </MemoryRouter>
-    )
-
-    const actual = wrapper.containsMatchingElement(HomeContainer)
     expect(actual).toBe(expected)
   })
 

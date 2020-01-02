@@ -35,17 +35,6 @@ describe('action tests', () => {
     expect(actual).toEqual(expected)
   })
 
-  it('dislikeMovie returns disliked genres', () => {
-    const genres = [{ id: 4, type: 'Biography' }, { id: 7, type: 'Drama' }, { id: 11, type: 'History' }]
-    const expected = {
-      type: searchMovie.DISLIKE_MOVIE,
-      genres
-    }
-
-    const actual = dislikeMovie(genres)
-    expect(actual).toEqual(expected)
-  })
-
   it('clearAll returns initial state', () => {
     const expected = {
       type: searchMovie.CLEAR_ALLSTATE

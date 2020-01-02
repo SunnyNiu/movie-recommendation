@@ -22,11 +22,11 @@ class MovieOption extends React.Component {
           </div>
           <ButtonContainer>
             <Button
-              onClick={() => { fetchMovieGenresByMovieId(id, 'dislike'); fetchMovie(moviesId) }}>
-          👎 Dislike
+              onClick={() => { fetchMovie(moviesId) }}>
+              🤲 Skip
             </Button>
             <Button
-              onClick={() => { fetchMovieGenresByMovieId(id, 'like'); fetchMovie(moviesId) }}>
+              onClick={() => { fetchMovieGenresByMovieId(id); fetchMovie(moviesId) }}>
          👍 Like
             </Button>
           </ButtonContainer>
