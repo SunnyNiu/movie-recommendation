@@ -15,11 +15,10 @@ jobs:
     - name: test
       run: |
         yarn
-        yarn test
     - name: build
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
-        APP_NAME: ${{ 'movie-recommendation-1' }}
+        APP_NAME: ${{ 'moviesrecommend' }}
       run: |
         docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
         heroku container:push web -a $APP_NAME
