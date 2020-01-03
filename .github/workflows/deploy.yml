@@ -1,26 +1,27 @@
-name: Node CI
+name: Test and Deploy
 
-on: [push]
+on: 
+  push:
+    branches:
+      - master
+env:
+  HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
 
 jobs:
-  build:
-
+  release:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - uses: actions/checkout@master
+    - name: test
       run: |
-        npm ci
-        npm run build --if-present
-        npm test
-      env:
-        CI: true
+        yarn
+        yarn test
+    - name: build
+      env: 
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
+        APP_NAME: ${{ 'movie-recommendation-1' }}
+      run: |
+        docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+        heroku container:push web -a $APP_NAME
+        heroku container:release web -a $APP_NAME   
+
