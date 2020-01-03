@@ -14,7 +14,6 @@ describe('<App /> component tests', () => {
         <App/>
       </MemoryRouter>
     )
-
     expect(wrapper.find(Nav)).toHaveLength(1)
     expect(wrapper.find(Home)).toHaveLength(0)
     expect(wrapper.find(MovieOption)).toHaveLength(0)
@@ -29,17 +28,13 @@ describe('<App /> component tests', () => {
     expect(wrapper.find(Home)).toHaveLength(1)
   })
 
-  it('renders <App /> contains <BrowserRouter />', () => {
-    const expected = '<BrowserRouter />'
-
-    const wrapper = shallow(<App/>)
-    const actual = wrapper.text()
-    expect(actual).toMatch(expected)
-  })
-
   it('should contains <Nav />', () => {
     const expected = true
-    const wrapper = mount(<App/>)
+    const wrapper = mount(
+      <MemoryRouter initialEntries={[ '/' ]}>
+        <App/>
+      </MemoryRouter>
+    )
     const actual = wrapper.containsMatchingElement(Nav)
     expect(actual).toBe(expected)
   })

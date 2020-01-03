@@ -25,7 +25,7 @@ describe('movieReducer tests', () => {
     expect(actual).toEqual(expected)
   })
 
-  it('likemovie that the genre will increase correctly', () => {
+  it('likemovie that add liked movie into likedMovies array', () => {
     const currentState = {
       movie: { id: 2, name: 'Iron man', image: './image2.png' },
       moviesId: [3],
