@@ -5,8 +5,8 @@ export function getRecommendedMovies (movies) {
   return request
     .get(`/recommendmovies/${moviesJoinWithComma}`)
     .then(response => response.body)
-    .catch(() => {
-      throw Error('You need to implement an API route for /movies/recommendmovies')
+    .catch((e) => {
+      throw Error(`${e}, You need to implement an API route for /movies/recommendmovies`)
     })
 }
 
@@ -15,7 +15,6 @@ export function getMoviesByIds (moviesId) {
     .get(`/movie?moviesId=${moviesId.join(',')}`)
     .then(response => response.body)
     .catch(e => {
-      console.error(e)
-      throw Error('You need to implement an API route for /movie?moviesId=${moviesId.join(', ')}')
+      throw Error(`${e}, You need to implement an API route for /movie?moviesId=${moviesId.join(', ')}`)
     })
 }

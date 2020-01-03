@@ -17,9 +17,9 @@ function getRandomInt (min, max) {
 router.get('/movie', (req, res) => {
   const moviesId = req.query.moviesId ? req.query.moviesId.split(',').map(item => parseInt(item, 10)) : []
 
-  let id = getRandomInt(1, 80)
+  let id = getRandomInt(1, 90)
   while (moviesId.includes(id)) {
-    id = getRandomInt(1, 80)
+    id = getRandomInt(1, 90)
   }
 
   db.getMovieById(id)

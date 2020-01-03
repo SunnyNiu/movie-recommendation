@@ -6,7 +6,6 @@ import Nav from './Nav'
 
 const App = () => (
   <div>
-
     <Route path='/' component={Nav} />
     <Switch>
       <Route exact path='/' component={Home} />

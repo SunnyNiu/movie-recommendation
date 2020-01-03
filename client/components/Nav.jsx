@@ -7,12 +7,12 @@ const Header = () => (
       Recommended Movies
     </LogoContainer>
 
-    <OptionsContainer>
+    {/* <OptionsContainer>
       <OptionLink to="/register">
          REGISTER
       </OptionLink>
       <OptionLink to='/signin'>SIGN IN</OptionLink>
-    </OptionsContainer>
+    </OptionsContainer> */}
   </HeaderContainer>
 )
 

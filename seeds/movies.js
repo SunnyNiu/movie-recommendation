@@ -83,7 +83,17 @@ exports.seed = function (knex) {
         { id: 77, name: 'Memories of Murder', image: '/images/77.png' },
         { id: 78, name: 'Mad Max: Fury Road', image: '/images/78.png' },
         { id: 79, name: 'The Help', image: '/images/79.png' },
-        { id: 80, name: 'Watchmen', image: '/images/80.png' }
+        { id: 80, name: 'Watchmen', image: '/images/80.png' },
+        { id: 81, name: '1917', image: '/images/81.png' },
+        { id: 82, name: 'A Christmas Story', image: '/images/82.png' },
+        { id: 83, name: 'The Lighthouse', image: '/images/83.png' },
+        { id: 84, name: 'Elf', image: '/images/84.png' },
+        { id: 85, name: 'Frozen', image: '/images/85.png' },
+        { id: 86, name: 'Togo', image: '/images/86.png' },
+        { id: 87, name: 'Ad Astra', image: '/images/87.png' },
+        { id: 88, name: "Dr. Seuss' The Grinch", image: '/images/88.png' },
+        { id: 89, name: 'Jumanji: Welcome to the Jungle', image: '/images/89.png' },
+        { id: 90, name: 'The Polar Express', image: '/images/90.png' }
       ])
     })
 }
