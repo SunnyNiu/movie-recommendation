@@ -14,7 +14,8 @@ export function getMoviesByIds (moviesId) {
   return request
     .get(`/movie?moviesId=${moviesId.join(',')}`)
     .then(response => response.body)
-    .catch(() => {
+    .catch(e => {
+      console.error(e)
       throw Error('You need to implement an API route for /movie?moviesId=${moviesId.join(', ')}')
     })
 }

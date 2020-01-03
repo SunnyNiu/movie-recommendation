@@ -5,13 +5,9 @@ describe('movieReducer tests', () => {
   it('nextmovie shows new movie', () => {
     const currentState = {
       movie: '',
-      genres: {
-        Action: 0,
-        Adventure: 0,
-        Animation: 0,
-        Biography: 0
-      },
-      moviesId: []
+      moviesId: [],
+      likedMovies: [],
+      movies: []
     }
 
     const movie = { id: 2, name: 'Iron man', image: './image2.png' }
@@ -21,13 +17,9 @@ describe('movieReducer tests', () => {
     }
     const expected = {
       movie: { id: 2, name: 'Iron man', image: './image2.png' },
-      genres: {
-        Action: 0,
-        Adventure: 0,
-        Animation: 0,
-        Biography: 0
-      },
-      moviesId: [2]
+      moviesId: [2],
+      likedMovies: [],
+      movies: []
     }
     const actual = movieReducer(currentState, action)
     expect(actual).toEqual(expected)
@@ -36,35 +28,42 @@ describe('movieReducer tests', () => {
   it('likemovie that the genre will increase correctly', () => {
     const currentState = {
       movie: { id: 2, name: 'Iron man', image: './image2.png' },
-      genres: {
-        Action: 1,
-        Adventure: 0,
-        Animation: 0,
-        Biography: 0,
-        SciFi: 0,
-        Horror: 0,
-        Thriller: 0
-      },
-      moviesId: [3]
+      moviesId: [3],
+      likedMovies: [],
+      movies: []
     }
 
-    const genres = [{ id: 1, type: 'Action' }, { id: 2, type: 'Adventure' }, { id: 5, type: 'SciFi' }]
     const action = {
       type: searchMovie.LIKE_MOVIE,
-      genres: genres
+      name: 'Iron man'
     }
     const expected = {
       movie: { id: 2, name: 'Iron man', image: './image2.png' },
-      genres: {
-        Action: 2,
-        Adventure: 1,
-        Animation: 0,
-        Biography: 0,
-        SciFi: 1,
-        Horror: 0,
-        Thriller: 0
-      },
-      moviesId: [3]
+      moviesId: [3],
+      likedMovies: ['Iron man'],
+      movies: []
+    }
+    const actual = movieReducer(currentState, action)
+    expect(actual).toEqual(expected)
+  })
+
+  it('showmovies that show recommended movies', () => {
+    const currentState = {
+      movie: { id: 2, name: 'Iron man', image: './image2.png' },
+      moviesId: [3],
+      likedMovies: [2],
+      movies: []
+    }
+
+    const action = {
+      type: searchMovie.SHOW_MOVIES,
+      movies: [{ 'name': 'Iron Man' }, { 'name': 'Coco' }]
+    }
+    const expected = {
+      movie: { id: 2, name: 'Iron man', image: './image2.png' },
+      moviesId: [3],
+      likedMovies: [2],
+      movies: [[{ 'name': 'Iron Man' }, { 'name': 'Coco' }]]
     }
     const actual = movieReducer(currentState, action)
     expect(actual).toEqual(expected)
@@ -73,16 +72,9 @@ describe('movieReducer tests', () => {
   it('clearall state works well', () => {
     const currentState = {
       movie: { id: 3, name: 'A Quiet Place Part II', image: './image3.png' },
-      genres: {
-        Action: 1,
-        Adventure: 0,
-        Animation: 0,
-        Biography: 0,
-        Horror: 0,
-        SciFi: 0,
-        Thriller: 0
-      },
-      moviesId: [2]
+      moviesId: [2],
+      likedMovies: [2],
+      movies: [{ 'name': 'The Incredible Hulk' }, { 'name': 'Iron man' }]
     }
 
     const action = {
@@ -92,28 +84,9 @@ describe('movieReducer tests', () => {
     // expected status is same as initialSate in reducer
     const initialState = {
       movie: '',
-      genres: {
-        Action: 0,
-        Adventure: 0,
-        Animation: 0,
-        Biography: 0,
-        Comedy: 0,
-        Crime: 0,
-        Drama: 0,
-        Family: 0,
-        Fantasy: 0,
-        FilmNoir: 0,
-        History: 0,
-        Horror: 0,
-        Music: 0,
-        Musical: 0,
-        Mystery: 0,
-        Romance: 0,
-        SciFi: 0,
-        Sport: 0,
-        Thriller: 0
-      },
-      moviesId: []
+      moviesId: [],
+      likedMovies: [],
+      movies: []
     }
     const actual = movieReducer(currentState, action)
     expect(actual).toEqual(initialState)
