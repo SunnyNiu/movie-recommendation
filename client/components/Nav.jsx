@@ -3,7 +3,7 @@ import { HeaderContainer, LogoContainer } from '../NavStyles'
 
 const Header = () => (
   <HeaderContainer>
-    <LogoContainer to="/">
+    <LogoContainer >
       Recommended Movies
     </LogoContainer>
 

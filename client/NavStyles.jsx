@@ -20,7 +20,7 @@ color: #fff !important;
 font-family: Arial, Helvetica, sans-serif;
 `
 
-export const LogoContainer = styled(Link)`
+export const LogoContainer = styled.div`
 height: 100%;
 padding: 25px;
 text-decoration: none;
