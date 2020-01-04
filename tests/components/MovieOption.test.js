@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import MovieOption from '../../client/components/MovieOption'
-import { Button, Title, MovieContainer, ButtonContainer, Img } from '../../client/MovieOption.styles'
+import { Button, Title, MovieContainer, ButtonContainer, Img } from '../../client/MovieOptionStyles'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'

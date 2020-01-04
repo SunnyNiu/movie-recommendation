@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeaderContainer, LogoContainer } from '../Nav'
+import { HeaderContainer, LogoContainer } from '../NavStyles'
 
 const Header = () => (
   <HeaderContainer>

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchMovieCreator, likeMovieCreator } from '../../redux/movie.actions'
 import Recommendation from './Recommendation'
-import { Button, Title, MovieContainer, Container, ButtonContainer, Img } from '../MovieOption.styles'
+import { Button, Title, MovieContainer, Container, ButtonContainer, Img } from '../MovieOptionStyles'
 
 class MovieOption extends React.Component {
   componentDidMount () {

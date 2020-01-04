@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import Home from '../../client/components/Home'
 import { MemoryRouter } from 'react-router'
-import { WelcomeTitle, LinkContainer, StartButton } from '../../client/Home.styles'
+import { WelcomeTitle, LinkContainer, StartButton } from '../../client/HomeStyles'
 
 describe('<Home /> component tests', () => {
   it('Home contains Start button', () => {

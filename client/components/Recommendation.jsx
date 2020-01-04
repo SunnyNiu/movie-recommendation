@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Title, Button, MovieContainer } from '../Recommendation.styles'
+import { Title, Button, MovieContainer } from '../RecommendationStyles'
 import { withRouter } from 'react-router-dom'
 import { clearAll, fetchRecommendMoviesCreator } from '../../redux/movie.actions'
 import Movie from './Movie'

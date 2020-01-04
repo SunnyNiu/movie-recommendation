@@ -1,5 +1,5 @@
 import React from 'react'
-import { MovieList } from '../Recommendation.styles'
+import { MovieList } from '../RecommendationStyles'
 import Grid from './Grid'
 import Cell from './Cell'
 
@@ -10,7 +10,7 @@ class Movie extends React.Component {
       <MovieList>
         <label>Movie:{Name}</label>
         <Grid columns="420px 1fr">
-          <Cell minWidth="450px" center={'right'}>
+          <Cell minWidth="450px">
             <iframe src={yUrl}
               width="400" height="300" frameBorder="0" allowFullScreen></iframe>
           </Cell>

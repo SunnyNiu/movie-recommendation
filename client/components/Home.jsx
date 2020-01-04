@@ -1,5 +1,5 @@
 import React from 'react'
-import { WelcomeTitle, LinkContainer, StartButton } from '../Home.styles'
+import { WelcomeTitle, LinkContainer, StartButton } from '../HomeStyles'
 import Grid from './Grid'
 import Cell from './Cell'
 
