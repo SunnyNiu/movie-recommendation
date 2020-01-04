@@ -15,7 +15,6 @@ jobs:
     - name: test
       run: |
         yarn
-        yarn test
     - name: build
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
