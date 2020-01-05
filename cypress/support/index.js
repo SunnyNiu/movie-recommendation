@@ -13,8 +13,13 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
+/// <reference types="cypress" />
 // Import commands.js using ES2015 syntax:
 import './commands'
+import { cy } from 'cypress'
 
+beforeEach(() => {
+  cy.exec('yarn db:reset')
+})
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
