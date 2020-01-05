@@ -1,8 +1,10 @@
 const path = require('path')
 module.exports = require('knex')
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './client/index.js',
+  entry: './src/client/index.js',
   output: {
     path: path.join(__dirname, 'server/public'),
     filename: 'bundle.js'
@@ -17,7 +19,8 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts']
+    extensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
+    modules: [path.resolve('src'), path.resolve('server'), path.resolve('node_modules')],
   },
   devServer: {
     compress: true,

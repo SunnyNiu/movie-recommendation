@@ -4,9 +4,9 @@ import {
   clearAll,
   likeMovieCreator
 
-} from '../redux/movie.actions'
+} from '../src/redux/movie.actions'
 
-import { searchMovie } from '../redux/movie.types'
+import { searchMovie } from '../src/redux/movie.types'
 
 describe('action tests', () => {
   it('showMovie return movie', () => {

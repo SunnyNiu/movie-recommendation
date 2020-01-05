@@ -1,23 +1,40 @@
-# React Form Handling
+# movie-recommendation
+```
+Thump up/Skip 10 movies, it will recommend 20 movies based on your options.
+It is developed using Redux, Express, JavaScript, Superagent, Knex, SQLite.
+Unit testing using Jest, Supertest, Nock, Enzyme. 
+E2E testing using Cypress.
+Configured docker and yml file and automatically deploy to heroku when push code to master branch.
 
-Form handling in React.
+deployed to heroku,
+https://moviesrecommend.herokuapp.com/
+```
 
-
-## Install & Setup the database & run
+## Install & Setup the database & run && testing
 
 After cloning this repo
 
-```set up the database
+```
+set up the database
 npx knex migrate:latest
 npx knex seed:run
+```
 
-```shell
+```
+shell
 yarn
 yarn start
 ```
 
-```Cypress E2E testing
-Working in Progress, will finish it soon
+```
+run all tests includes Cypress E2E testing and Unite testing
+yarn ci:dev
+```
+
+```
+Unit testing
+yarn test
+```
 
 ## Things to look at
 
@@ -25,5 +42,3 @@ URL
 -----------------------------------
 http://localhost:3000/
 
-
-# movie-recommendation

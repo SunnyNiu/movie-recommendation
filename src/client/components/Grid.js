@@ -1,9 +1,10 @@
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const autoRows = ({ minRowHeight = '10px' }) => `minmax(${minRowHeight}, auto)`
-const frGetter = value => typeof value === 'number' ? `repeat(${value}, 1fr)` : value
-const gap = ({ gap = '8px' }) => gap
+const autoRows = ({ minRowHeight = '10px' }) => `minmax(${minRowHeight}, auto)`;
+const frGetter = value =>
+  typeof value === 'number' ? `repeat(${value}, 1fr)` : value;
+const gap = ({ gap = '8px' }) => gap;
 
 const Grid = styled.div`
   display: grid;
@@ -15,7 +16,7 @@ const Grid = styled.div`
   grid-gap: ${gap};
   ${({ columnGap }) => columnGap && `column-gap: ${columnGap}`};
   ${({ rowGap }) => rowGap && `row-gap: ${rowGap}`};
-`
+`;
 
 Grid.propTypes = {
   columns: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -25,7 +26,7 @@ Grid.propTypes = {
   height: PropTypes.string,
   minRowHeight: PropTypes.string,
   flow: PropTypes.string,
-  rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-}
+  rows: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};
 
-export default Grid
+export default Grid;

@@ -3,7 +3,7 @@ import { mount } from 'enzyme'
 import 'jest-styled-components'
 import renderer from 'react-test-renderer'
 
-import Grid from '../../client/components/Grid'
+import Grid from '../../src/client/components/Grid'
 
 describe('Grid component tests', () => {
   it('it render Grid', () => {

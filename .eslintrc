@@ -1,8 +1,21 @@
 {
-  "extends": [
-    "plugin:cypress-dev/general",
-    "plugin:cypress-dev/tests"
-  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "standard", "plugin:cypress-dev/general", "plugin:cypress-dev/tests"],
+  "plugins": ["standard", "promise"],
+  "rules": {
+    "eol-last": ["error", "always"],
+    "no-multiple-empty-lines": [
+      "error",
+      { "max": 1, "maxEOF": 0, "maxBOF": 0 }
+    ],
+    "object-curly-spacing": [2, "always"],
+    "react/prop-types": "off"
+  },
   "globals": {
     "cy": true,
     "Cypress": true

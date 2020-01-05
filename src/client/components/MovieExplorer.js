@@ -1,11 +1,32 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchMovieCreator, likeMovieCreator } from '../../redux/movie.actions'
+import styled from 'styled-components';
+import { fetchMovieCreator, likeMovieCreator } from '../redux/movie.actions'
 import Recommendation from './Recommendation'
-import { Button, Title, MovieContainer, Container, ButtonContainer, Img } from '../MovieOptionStyles'
+import { Button } from './Button.styles'
 
-class MovieOption extends React.Component {
-  componentDidMount () {
+const MovieContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Title = styled.h2`
+  font-style: italic;
+  font-size: 1rem;
+  text-align: center;
+  margin: 1em 0em;
+`;
+
+const Img = styled.img`
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  max-height: 500px;
+`;
+
+class MovieExplorer extends React.Component {
+  componentWillMount () {
     const { fetchMovie, moviesId } = this.props
     fetchMovie(moviesId)
   }
@@ -13,14 +34,14 @@ class MovieOption extends React.Component {
   render () {
     const { fetchMovie, moviesId, likeMovie, movie: { name, image } } = this.props
 
-    return (<Container>
+    return (<div>
       {moviesId.length > 10 ? (<Recommendation/>) : (
         <MovieContainer>
           <div>
             <Title>{name}</Title>
             <Img src={image} alt='movieImage'/>
           </div>
-          <ButtonContainer>
+          <div>
             <Button
               onClick={() => { fetchMovie(moviesId) }}>
               🤲 Skip
@@ -29,18 +50,17 @@ class MovieOption extends React.Component {
               onClick={() => { likeMovie(name); fetchMovie(moviesId) }}>
               👍 Like
             </Button>
-          </ButtonContainer>
+          </div>
         </MovieContainer>
       )}
-    </Container>)
+    </div>)
   }
 }
 
 function mapStateToProps (state) {
   return {
     movie: state.movie,
-    moviesId: state.moviesId,
-    likedMovies: state.likeMovies
+    moviesId: state.moviesId
   }
 }
 const mapDispatchToProps = dispatch => ({
@@ -48,4 +68,4 @@ const mapDispatchToProps = dispatch => ({
   likeMovie: (name) => dispatch(likeMovieCreator(name))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieOption)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieExplorer)

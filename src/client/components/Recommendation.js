@@ -1,12 +1,27 @@
 import React from 'react'
+import styled from 'styled-components';
 import { connect } from 'react-redux'
-import { Title, Button, MovieContainer } from '../RecommendationStyles'
+import { Button } from './Button.styles'
 import { withRouter } from 'react-router-dom'
-import { clearAll, fetchRecommendMoviesCreator } from '../../redux/movie.actions'
+import { clearAll, fetchRecommendMoviesCreator } from '../redux/movie.actions'
 import Movie from './Movie'
 
+
+export const Title = styled.h2`
+  font-style: italic;
+  font-size: 1rem;
+  align-items: center;
+  margin: 1rem, 0rem;
+`;
+
+export const MovieContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 class Recommendation extends React.Component {
-  componentDidMount () {
+  componentWillMount () {
     this.props.fetchRecommendMovies(this.props.likedMovies)
   }
 
@@ -31,8 +46,6 @@ class Recommendation extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    movie: state.movie,
-    moviesId: state.moviesId,
     likedMovies: state.likedMovies,
     movies: state.movies
   }

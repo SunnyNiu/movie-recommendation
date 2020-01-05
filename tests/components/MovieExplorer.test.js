@@ -1,17 +1,15 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import Recommendation from '../../src/client/components/Recommendation'
-import Movie from '../../src/client/components/Movie'
-import { Button } from '../../src/client/components/Button.styles'
+import MovieExplorer from '../../src/client/components/MovieExplorer'
+import { Button} from '../../src/client/components/Button.styles'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
-import { MemoryRouter } from 'react-router'
 
 jest.mock('react-dom')
 const mockStore = configureStore([])
 
-describe('<Recommendation /> component tests', () => {
+describe('<MovieExplorer /> component tests', () => {
   let store
   let component
   beforeEach(() => {
@@ -26,9 +24,7 @@ describe('<Recommendation /> component tests', () => {
 
     component = renderer.create(
       <Provider store={store}>
-        <MemoryRouter>
-          <Recommendation />
-        </MemoryRouter>
+        <MovieExplorer />
       </Provider>
     )
   })
@@ -37,28 +33,21 @@ describe('<Recommendation /> component tests', () => {
     expect(component.toJSON()).toMatchSnapshot()
   })
 
- 
+  it('should contains text Skip and Like', () => {
+    const wrapper = mount(<Provider store={store}>
+      <MovieExplorer />
+    </Provider>)
+
+    expect(wrapper.text()).toMatch('🤲 Skip👍 Like')
+  })
+
   it('should contains <Button />', () => {
     const expected = true
     const wrapper = mount(<Provider store={store}>
-      <MemoryRouter>
-        <Recommendation />
-      </MemoryRouter>
+      <MovieExplorer />
     </Provider>)
 
     const actual = wrapper.containsMatchingElement(Button)
-    expect(actual).toBe(expected)
-  })
-
-  it('should contains <Movie />', () => {
-    const expected = true
-    const wrapper = mount(<Provider store={store}>
-      <MemoryRouter>
-        <Recommendation />
-      </MemoryRouter>
-    </Provider>)
-
-    const actual = wrapper.containsMatchingElement(Movie)
     expect(actual).toBe(expected)
   })
 })

@@ -1,5 +1,5 @@
 import nock from 'nock'
-const { getRecommendedMovies, getMoviesByIds } = require('../client/api/recommendedMovies')
+const { getRecommendedMovies, getMoviesByIds } = require('../src/client/api/recommendedMovies')
 
 const apiUrl = 'http://localhost'
 
