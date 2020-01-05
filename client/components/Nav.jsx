@@ -6,13 +6,6 @@ const Header = () => (
     <LogoContainer >
       Recommended Movies
     </LogoContainer>
-
-    {/* <OptionsContainer>
-      <OptionLink to="/register">
-         REGISTER
-      </OptionLink>
-      <OptionLink to='/signin'>SIGN IN</OptionLink>
-    </OptionsContainer> */}
   </HeaderContainer>
 )
 
