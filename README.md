@@ -16,6 +16,8 @@ yarn
 yarn start
 ```
 
+```Cypress E2E testing
+Working in Progress, will finish it soon
 
 ## Things to look at
 

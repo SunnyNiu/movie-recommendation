@@ -17,7 +17,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts']
   },
   devServer: {
     compress: true,
@@ -25,11 +25,6 @@ module.exports = {
     contentBase: './server/public',
     proxy: {
       '/movie/*': {
-        target: 'http://localhost:3000',
-        secure: false
-      },
-
-      '/movieGenres/*': {
         target: 'http://localhost:3000',
         secure: false
       },

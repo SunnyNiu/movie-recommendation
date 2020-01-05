@@ -4,14 +4,22 @@
   "description": "Form handling using React",
   "main": "server/server.js",
   "scripts": {
+    "cypress:version": "cypress version",
+    "cypress:verify": "cypress verify",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:record": "cypress run --record",
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "cypress:run:headed": "cypress run --headed",
     "client": "webpack-dev-server --hot --inline",
     "dev": "nodemon server & webpack --watch",
     "server": "node server/index.js",
     "start": "webpack && node server/index.js",
     "test": "jest",
-    "postinstall": "webpack && knex migrate:latest"
+    "postinstall": "webpack && knex migrate:latest",
+    "e2e": "cypress run"
   },
-  "author": "EDA",
+  "author": "Sunny",
   "license": "ISC",
   "babel": {
     "presets": [
@@ -32,10 +40,13 @@
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.0.0",
+    "@cypress/webpack-preprocessor": "^4.1.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.5",
+    "cypress": "^3.8.1",
+    "cypress-axe": "0.5.3",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "jest": "^24.9.0",
@@ -67,6 +78,8 @@
     "style-loader": "^1.0.0",
     "styled-components": "^4.4.1",
     "superagent": "^5.1.0",
-    "supertest": "^4.0.2"
-  }
+    "supertest": "^4.0.2",
+    "todomvc-common": "^1.0.5"
+  },
+  "repository": "https://github.com/SunnyNiu/movie-recommendation.git"
 }
