@@ -14,7 +14,6 @@ npx knex seed:run
 ```shell
 yarn
 yarn start
-```
 
 ```Cypress E2E testing
 Working in Progress, will finish it soon
