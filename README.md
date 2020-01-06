@@ -1,7 +1,9 @@
-# React Form Handling
-
-Form handling in React.
-
+# movie-recommendation
+Thump up/Skip 10 movies, it will recommend 20 movies based on your options.
+It is developed using Redux, Express, JavaScript, Superagent, Knex, SQLite.
+Unit testing using Jest, Supertest, Nock, Enzyme. 
+E2E testing using Cypress.
+Configured docker and yml file and automatically deploy to heroku when push code to master branch.
 
 ## Install & Setup the database & run && testing
 
@@ -26,16 +28,9 @@ yarn cypress run
 yarn test
 ```
 
-
 ## Things to look at
 
 URL                                
 -----------------------------------
 http://localhost:3000/
 
-
-# movie-recommendation
-Thump up/Skip 10 movies, it will recommend 20 movies based on your options.
-It is developed using Redux, Express, JavaScript, Superagent.
-Unit testing using Jest, Supertest, Nock, Enzyme. 
-E2E testing using Cypress.
