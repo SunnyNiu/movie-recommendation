@@ -19,9 +19,8 @@ yarn
 yarn start
 ```
 
-```Cypress E2E testing
-yarn start
-yarn cypress run 
+```run all tests includes Cypress E2E testing and Unite testing
+yarn ci:dev
 ```
 
 ```Unit testing
