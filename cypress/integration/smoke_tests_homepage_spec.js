@@ -2,13 +2,15 @@
 /// <reference types="cypress" />
 
 describe('Smoke tests home page', () => {
+  const btnStart = 'Start!'
+
   beforeEach(function () {
     cy.visit('/')
   })
 
   context('When page is initially opened', () => {
     it('It should contains start button', () => {
-      cy.get('button').contains('Start!')
+      cy.get('button').contains(btnStart)
     })
 
     it('It should contains hint message to customer', () => {

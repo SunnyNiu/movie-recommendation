@@ -2,11 +2,15 @@
 /// <reference types="cypress" />
 
 describe('Smoke tests recommendation movie', () => {
+  const btnStart = 'Start!'
+  const btnLike = 'Like'
+  const btnBackToHome = 'Back to Home!'
+
   beforeEach(function () {
     cy.visit('/')
-    cy.get('button').contains('Start!').click()
+    cy.get('button').contains(btnStart).click()
     for (let i = 0; i < 10; i++) {
-      cy.get('button').contains('Like').click()
+      cy.get('button').contains(btnLike).click()
     }
   })
 
@@ -20,12 +24,12 @@ describe('Smoke tests recommendation movie', () => {
     })
 
     it('it should contains Back to Home button', () => {
-      cy.get('button').contains('Back to Home!')
+      cy.get('button').contains(btnBackToHome)
     })
 
     it('it should return back to home page after clicking button Back to Home', () => {
       cy.get('button').click()
-      cy.get('button').contains('Start!')
+      cy.get('button').contains(btnStart)
     })
   })
 })

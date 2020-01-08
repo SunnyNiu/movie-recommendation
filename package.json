@@ -20,8 +20,8 @@
     "db:seed": "npm run knex seed:run",
     "test": "jest",
     "postinstall": "webpack && knex migrate:latest",
-    "e2e": "start :3000 && cypress run",
-    "ci:dev":"start-server-and-test start :3000 & cypress run",
+    "e2e": "start-server-and-test start :3000 'cypress run'",
+    "ci:dev":"start-server-and-test start :3000 'cypress run'",
     "ci":"start-server-and-test start :3000 test:headless",
     "lint": "eslint --fix cypress/integration/*.js cypress/support/*.js cypress/plugins/*.js"
   },
