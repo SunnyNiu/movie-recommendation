@@ -1,5 +1,6 @@
 # movie-recommendation
-```Thump up/Skip 10 movies, it will recommend 20 movies based on your options.
+```
+Thump up/Skip 10 movies, it will recommend 20 movies based on your options.
 It is developed using Redux, Express, JavaScript, Superagent, Knex, SQLite.
 Unit testing using Jest, Supertest, Nock, Enzyme. 
 E2E testing using Cypress.
@@ -13,21 +14,25 @@ https://moviesrecommend.herokuapp.com/
 
 After cloning this repo
 
-```set up the database
+```
+set up the database
 npx knex migrate:latest
 npx knex seed:run
 ```
 
-```shell
+```
+shell
 yarn
 yarn start
 ```
 
-```run all tests includes Cypress E2E testing and Unite testing
-yarn ci:dev
+```
+run Cypress E2E testing
+yarn e2e
 ```
 
-```Unit testing
+```
+run Unit testing
 yarn test
 ```
 
