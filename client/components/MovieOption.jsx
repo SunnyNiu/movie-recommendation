@@ -5,7 +5,7 @@ import Recommendation from './Recommendation'
 import { Button, Title, MovieContainer, Container, ButtonContainer, Img } from '../MovieOptionStyles'
 
 class MovieOption extends React.Component {
-  componentDidMount () {
+  componentWillMount () {
     const { fetchMovie, moviesId } = this.props
     fetchMovie(moviesId)
   }

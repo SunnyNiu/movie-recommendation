@@ -6,7 +6,7 @@ import { clearAll, fetchRecommendMoviesCreator } from '../../redux/movie.actions
 import Movie from './Movie'
 
 class Recommendation extends React.Component {
-  componentDidMount () {
+  componentWillMount () {
     this.props.fetchRecommendMovies(this.props.likedMovies)
   }
 
