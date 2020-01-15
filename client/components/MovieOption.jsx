@@ -39,8 +39,7 @@ class MovieOption extends React.Component {
 function mapStateToProps (state) {
   return {
     movie: state.movie,
-    moviesId: state.moviesId,
-    likedMovies: state.likeMovies
+    moviesId: state.moviesId
   }
 }
 const mapDispatchToProps = dispatch => ({
