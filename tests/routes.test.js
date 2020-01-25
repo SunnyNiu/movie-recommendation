@@ -20,11 +20,4 @@ describe('get random movie', () => {
       })
   })
 
-  it('GET /movies/:moviesId', () => {
-    return request(server)
-      .get('/movies/1,2,3')
-      .then((res) => {
-        expect(res.body).toEqual(mockGetMoviesByIds)
-      })
-  })
 })

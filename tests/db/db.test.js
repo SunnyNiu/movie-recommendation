@@ -26,20 +26,4 @@ describe('movies database tests', () => {
         expect(actual).toEqual(expected)
       )
   })
-
-  it('getMoviesByIds returns the correct movies', () => {
-    expect.assertions(1)
-
-    const moviesId = [2, 3, 4]
-    const expected = [
-      { name: 'The Incredible Hulk' },
-      { name: 'Thor' },
-      { name: 'The Godfather: Part II' }
-    ]
-
-    return db.getMoviesByIds(moviesId, testDb)
-      .then(actual =>
-        expect(actual).toEqual(expected)
-      )
-  })
 })
