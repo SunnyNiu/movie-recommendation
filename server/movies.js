@@ -32,16 +32,6 @@ router.get('/movie', (req, res) => {
   })
 })
 
-router.get('/movies/:moviesId', (req, res) => {
-  const moviesId = req.params.moviesId
-
-  db.getMoviesByIds(moviesId)
-  .then((names) => res.json(names))
-  .catch((err) => {
-    res.status(500).send(`DATABASE ERROR:${err.message}`)
-  })
-})
-
 router.get('/recommendmovies/:likedmovies', (req, res) => {
   const likedmovies = req.params.likedmovies
 

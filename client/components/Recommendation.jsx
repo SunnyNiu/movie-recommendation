@@ -31,7 +31,6 @@ class Recommendation extends React.Component {
 
 function mapStateToProps (state) {
   return {
-    movie: state.movie,
     likedMovies: state.likedMovies,
     movies: state.movies
   }
