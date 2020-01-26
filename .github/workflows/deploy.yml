@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: install
+    - name: install && test
       run: |
         yarn
-        yarn CYPRESS_baseUrl=https://moviesrecommend.herokuapp.com/ cypress run
+        CYPRESS_baseUrl='https://moviesrecommend.herokuapp.com/' yarn run jest
     - name: build
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
