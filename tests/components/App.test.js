@@ -5,7 +5,6 @@ import Home from '../../client/components/Home'
 import MovieOption from '../../client/components/MovieOption'
 import Nav from '../../client/components/Nav'
 import { MemoryRouter } from 'react-router'
-jest.mock('../../client/components/app')
 
 describe('<App /> component tests', () => {
   it('test invalid path should not contain Home or MovieOption', () => {
