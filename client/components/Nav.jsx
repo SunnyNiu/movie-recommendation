@@ -1,11 +1,9 @@
 import React from 'react'
-import { HeaderContainer, LogoContainer } from '../NavStyles'
+import { HeaderContainer} from '../NavStyles'
 
 const Header = () => (
   <HeaderContainer>
-    <LogoContainer >
       Recommended Movies
-    </LogoContainer>
   </HeaderContainer>
 )
 
