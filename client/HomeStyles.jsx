@@ -1,21 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0em 1em;
-  font-size: 2rem;
-  width:250px;
-  text-align: center;
-  &:hover {
-    cursor: pointer;
-    color: black;
-  }
-`
-
 export const BackToHomeButton = styled.button`
   background: transparent;
   border-radius: 3px;

@@ -18,12 +18,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 `
-
-export const Container = styled.div`
-`
-
-export const ButtonContainer = styled.div`
-`
 export const Img = styled.img`
   background-size: cover;
   background-position: center;

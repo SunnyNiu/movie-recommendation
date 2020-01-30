@@ -19,20 +19,6 @@ flex-direction: column;
 align-items: center;
 `
 
-export const Container = styled.div`
-`
-
-export const ButtonContainer = styled.div`
-`
-export const Img = styled.img`
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 5px;
-  opacity: 0.8;
-  max-width:100%;
-  max-height: 500px;
-`
-
 export const Title = styled.h1`
 font-style: italic;
 font-size: 1rem;
@@ -41,17 +27,6 @@ text-align: center;
 align-items: center;
 margin: 1em 0em
 `
-
-export const RecommendMovies = styled.div`
-font-family: 'Roboto', arial;
-display: flex;
-flex-direction: column;
-align-items: center;
-`
-export const UL = styled.ul`
-align-items: center;
-`
-
 export const MovieList = styled.div`
 font-size: 1rem;
 margin:1rem;
