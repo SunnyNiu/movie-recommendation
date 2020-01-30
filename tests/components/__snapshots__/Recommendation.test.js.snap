@@ -5,7 +5,7 @@ exports[`<Recommendation /> component tests should render with given state from 
   className="sc-bwzfXH eJzIwm"
 >
   <h1
-    className="sc-EHOje kKJqOx"
+    className="sc-htpNat eRzahp"
   >
     You Probably Like these Movies:
   </h1>

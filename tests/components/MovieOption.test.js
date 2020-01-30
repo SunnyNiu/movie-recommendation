@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import MovieOption from '../../client/components/MovieOption'
-import { Button, Title, MovieContainer, ButtonContainer, Img } from '../../client/MovieOptionStyles'
+import { Button, Title, MovieContainer, Img } from '../../client/MovieOptionStyles'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
@@ -68,16 +68,6 @@ describe('<MovieOption /> component tests', () => {
     </Provider>)
 
     const actual = wrapper.containsMatchingElement(Title)
-    expect(actual).toBe(expected)
-  })
-
-  it('should contains <ButtonContainer />', () => {
-    const expected = true
-    const wrapper = mount(<Provider store={store}>
-      <MovieOption />
-    </Provider>)
-
-    const actual = wrapper.containsMatchingElement(ButtonContainer)
     expect(actual).toBe(expected)
   })
 
