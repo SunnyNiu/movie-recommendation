@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components';
 import { fetchMovieCreator, likeMovieCreator } from '../../redux/movie.actions'
 import Recommendation from './Recommendation'
-import { Button} from '../MovieOptionStyles'
+import { Button } from './Button.styles'
 
 const MovieContainer = styled.div`
   display: flex;

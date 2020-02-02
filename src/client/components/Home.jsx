@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Grid from './Grid'
 import Cell from './Cell'
-import { Button } from '../MovieOptionStyles'
+import { Button } from './Button.styles'
 
 const Image = styled.img`
   width: 450px;
