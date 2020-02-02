@@ -15,7 +15,6 @@ jobs:
     - name: install && test
       run: |
         yarn
-        CYPRESS_baseUrl='https://moviesrecommend.herokuapp.com/' yarn run jest
     - name: build
       env: 
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_TOKEN }}
