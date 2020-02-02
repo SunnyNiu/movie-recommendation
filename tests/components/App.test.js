@@ -1,9 +1,9 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
-import App from '../../client/components/App'
-import Home from '../../client/components/Home'
-import MovieExplorer from '../../client/components/MovieExplorer'
-import Header from '../../client/components/Header'
+import App from '../../src/client/components/App'
+import Home from '../../src/client/components/Home'
+import MovieExplorer from '../../src/client/components/MovieExplorer'
+import Header from '../../src/client/components/Header'
 import { MemoryRouter } from 'react-router'
 
 describe('<App /> component tests', () => {

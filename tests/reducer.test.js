@@ -1,5 +1,5 @@
-import movieReducer from '../redux/movie.reducer'
-import { searchMovie } from '../redux/movie.types'
+import movieReducer from '../src/redux/movie.reducer'
+import { searchMovie } from '../src/redux/movie.types'
 
 describe('movieReducer tests', () => {
   it('nextmovie shows new movie', () => {

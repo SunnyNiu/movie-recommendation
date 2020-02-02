@@ -11,7 +11,7 @@ exports[`<Recommendation /> component tests should render with given state from 
   </h2>
   
   <button
-    className="sc-bdVaJa ljQCeF"
+    className="sc-bdVaJa jYgJaf"
     onClick={[Function]}
   >
      Back to Home! 

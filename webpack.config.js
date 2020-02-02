@@ -19,8 +19,8 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts'],
-    modules: [path.resolve('client'), path.resolve('server'), path.resolve('node_modules')],
+    extensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
+    modules: [path.resolve('src'), path.resolve('server'), path.resolve('node_modules')],
   },
   devServer: {
     compress: true,

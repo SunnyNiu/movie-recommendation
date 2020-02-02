@@ -32,7 +32,7 @@ router.get('/movie', (req, res) => {
   })
 })
 
-router.get('/recommendmovies/:likedmovies', (req, res) => {
+router.get('/recommendation/:likedmovies', (req, res) => {
   const likedmovies = req.params.likedmovies
 
   request

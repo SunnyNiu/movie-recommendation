@@ -3,26 +3,26 @@
 exports[`<MovieExplorer /> component tests should render with given state from Redux store 1`] = `
 <div>
   <div
-    className="sc-gzVnrw jGncgf"
+    className="sc-bZQynM bsmBBS"
   >
     <div>
       <h2
-        className="sc-htoDjs gtGlZw"
+        className="sc-gzVnrw bHKyUL"
       />
       <img
         alt="movieImage"
-        className="sc-dnqmqq fmudpY"
+        className="sc-htoDjs hOTVXL"
       />
     </div>
     <div>
       <button
-        className="sc-bZQynM fDFfcI"
+        className="sc-bdVaJa jYgJaf"
         onClick={[Function]}
       >
         🤲 Skip
       </button>
       <button
-        className="sc-bZQynM fDFfcI"
+        className="sc-bdVaJa jYgJaf"
         onClick={[Function]}
       >
         👍 Like
