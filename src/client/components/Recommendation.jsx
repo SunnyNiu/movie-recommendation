@@ -1,7 +1,7 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import styled from 'styled-components';
-import {Button } from '../RecommendationStyles'
+import { connect } from 'react-redux'
+import { Button} from '../RecommendationStyles'
 import { withRouter } from 'react-router-dom'
 import { clearAll, fetchRecommendMoviesCreator } from '../../redux/movie.actions'
 import Movie from './Movie'

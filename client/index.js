@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { applyMiddleware, createStore, compose } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from '../redux/movie.reducer'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 import App from './components/App'
 
@@ -17,7 +17,7 @@ const store = createStore(
 function render () {
   const root = document.getElementById('app')
   ReactDOM.render(<Provider store={store}>
-    <BrowserRouter><App /></BrowserRouter></Provider>, root)
+    <HashRouter><App /></HashRouter></Provider>, root)
 }
 
 render()

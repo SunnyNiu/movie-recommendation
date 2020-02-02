@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow, mount } from 'enzyme'
 import Home from '../../client/components/Home'
 import { MemoryRouter } from 'react-router'
-import { WelcomeTitle, LinkContainer, StartButton } from '../../client/HomeStyles'
+import { StartButton } from '../../client/HomeStyles'
 
 describe('<Home /> component tests', () => {
   it('Home contains Start button', () => {
@@ -23,30 +23,6 @@ describe('<Home /> component tests', () => {
     const wrapper = shallow(component)
     const actual = wrapper.text()
     expect(actual).toMatch(expected)
-  })
-
-  it('should contains <WelcomeTitle />', () => {
-    const expected = true
-    const wrapper = mount(
-      <MemoryRouter>
-        <Home />
-      </MemoryRouter>
-    )
-
-    const actual = wrapper.containsMatchingElement(WelcomeTitle)
-    expect(actual).toBe(expected)
-  })
-
-  it('should contains <LinkContainer />', () => {
-    const expected = true
-    const wrapper = mount(
-      <MemoryRouter>
-        <Home />
-      </MemoryRouter>
-    )
-
-    const actual = wrapper.containsMatchingElement(LinkContainer)
-    expect(actual).toBe(expected)
   })
 
   it('should contains <StartButton />', () => {

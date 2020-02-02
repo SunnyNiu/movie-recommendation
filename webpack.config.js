@@ -1,5 +1,7 @@
 const path = require('path')
 module.exports = require('knex')
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './client/index.js',
@@ -17,7 +19,8 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts']
+    extensions: ['.js', '.jsx', '.ts'],
+    modules: [path.resolve('client'), path.resolve('server'), path.resolve('node_modules')],
   },
   devServer: {
     compress: true,

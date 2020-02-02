@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import Recommendation from '../../client/components/Recommendation'
 import Movie from '../../client/components/Movie'
-import { Title, Button, MovieContainer } from '../../client/RecommendationStyles'
+import { Button } from '../../client/RecommendationStyles'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
@@ -37,30 +37,7 @@ describe('<Recommendation /> component tests', () => {
     expect(component.toJSON()).toMatchSnapshot()
   })
 
-  it('should contains <MovieContainer />', () => {
-    const expected = true
-    const wrapper = mount(<Provider store={store}>
-      <MemoryRouter>
-        <Recommendation />
-      </MemoryRouter>
-    </Provider>)
-
-    const actual = wrapper.containsMatchingElement(MovieContainer)
-    expect(actual).toBe(expected)
-  })
-
-  it('should contains <Title />', () => {
-    const expected = true
-    const wrapper = mount(<Provider store={store}>
-      <MemoryRouter>
-        <Recommendation />
-      </MemoryRouter>
-    </Provider>)
-
-    const actual = wrapper.containsMatchingElement(Title)
-    expect(actual).toBe(expected)
-  })
-
+ 
   it('should contains <Button />', () => {
     const expected = true
     const wrapper = mount(<Provider store={store}>

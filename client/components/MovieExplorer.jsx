@@ -1,10 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import styled from 'styled-components';
 import { fetchMovieCreator, likeMovieCreator } from '../../redux/movie.actions'
 import Recommendation from './Recommendation'
-import { Button, Title, MovieContainer, Img } from '../MovieOptionStyles'
+import { Button} from '../MovieOptionStyles'
 
-class MovieOption extends React.Component {
+const MovieContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Title = styled.h2`
+  font-style: italic;
+  font-size: 1rem;
+  text-align: center;
+  margin: 1em 0em;
+`;
+
+const Img = styled.img`
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  max-height: 500px;
+`;
+
+class MovieExplorer extends React.Component {
   componentWillMount () {
     const { fetchMovie, moviesId } = this.props
     fetchMovie(moviesId)
@@ -47,4 +68,4 @@ const mapDispatchToProps = dispatch => ({
   likeMovie: (name) => dispatch(likeMovieCreator(name))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieOption)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieExplorer)

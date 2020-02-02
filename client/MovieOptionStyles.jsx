@@ -13,25 +13,3 @@ export const Button = styled.button`
     color: black;
   }
 `
-export const MovieContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-`
-export const Img = styled.img`
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 5px;
-  opacity: 0.8;
-  max-width:100%;
-  max-height: 500px;
-`
-
-export const Title = styled.h1`
-font-style: italic;
-font-size: 1rem;
-font-family: Arial, Helvetica, sans-serif;
-text-align: center;
-align-items: center;
-margin: 1em 0em
-`
