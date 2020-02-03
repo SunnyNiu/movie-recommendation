@@ -1,5 +1,5 @@
 import { searchMovie } from './movie.types';
-import * as api from '../client/api/recommendedMovies';
+import * as api from '../api/recommendedMovies';
 
 export function showMovie(movie) {
   return {

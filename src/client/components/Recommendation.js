@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux'
 import { Button } from './Button.styles'
 import { withRouter } from 'react-router-dom'
-import { clearAll, fetchRecommendMoviesCreator } from '../../redux/movie.actions'
+import { clearAll, fetchRecommendMoviesCreator } from '../redux/movie.actions'
 import Movie from './Movie'
 
 
