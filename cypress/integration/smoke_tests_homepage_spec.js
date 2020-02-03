@@ -2,7 +2,7 @@
 /// <reference types="cypress" />
 
 describe('Smoke tests home page', () => {
-  const btnStart = 'Start!'
+  const btnStart = 'Start'
 
   beforeEach(function () {
     cy.visit('/')
@@ -14,11 +14,7 @@ describe('Smoke tests home page', () => {
     })
 
     it('It should contains hint message to customer', () => {
-      cy.get('p').contains('Thumbs Up/Skip 10 movies, we will recommend 20 movies that you may like.')
-    })
-
-    it('It should contains website logo', () => {
-      cy.get('div').contains('Thumbs Up/Skip 10 movies, we will recommend 20 movies that you may like.')
+      cy.get('p').contains('Thumbs Up/Skip 10 movies, we will recommend movies that you probably like according to your options')
     })
   })
 })

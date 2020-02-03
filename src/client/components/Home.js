@@ -14,8 +14,7 @@ const Home = () =>
     <Cell width ={3} center>
     <Image src="/images/analytic.png" alt="Analytic" />
       <p>
-        Thumbs Up/Skip 10 movies, we will recommend movies that you probably
-        like according to your options
+        Thumbs Up/Skip 10 movies, we will recommend movies that you probably like according to your options
       </p>
       <Link to="/movie-explorer">
         <Button>Start</Button>

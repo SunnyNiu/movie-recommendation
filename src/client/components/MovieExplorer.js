@@ -32,7 +32,10 @@ class MovieExplorer extends React.Component {
   }
 
   render () {
-    const { fetchMovie, moviesId, likeMovie, movie: { name, image } } = this.props
+
+    if (this.props.movie === null) return null;
+    const { name, image } = this.props.movie;
+    const { fetchMovie, moviesId, likeMovie } = this.props
 
     return (<div>
       {moviesId.length > 10 ? (<Recommendation/>) : (

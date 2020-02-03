@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import reducer from './redux/movie.reducer';
 import { HashRouter } from 'react-router-dom';
 
-import App from '../client/components/App';
+import App from './components/App';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));

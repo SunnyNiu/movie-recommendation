@@ -2,7 +2,7 @@
 /// <reference types="cypress" />
 
 describe('Smoke tests recommendation movie', () => {
-  const btnStart = 'Start!'
+  const btnStart = 'Start'
   const btnLike = 'Like'
   const btnBackToHome = 'Back to Home!'
 
