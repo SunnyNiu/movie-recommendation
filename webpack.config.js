@@ -18,10 +18,6 @@ module.exports = {
     }
     ]
   },
-  resolve: {
-    extensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node'],
-    modules: [path.resolve('src'), path.resolve('server'), path.resolve('node_modules')],
-  },
   devServer: {
     compress: true,
     hot: true,

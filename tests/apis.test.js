@@ -26,7 +26,7 @@ describe('apis tests', () => {
     const moviesJoinWithComma = movies.join(',')
 
     nock(apiUrl)
-      .get(`/recommendmovies/${moviesJoinWithComma}`)
+      .get(`/recommendation/${moviesJoinWithComma}`)
       .reply(200, expected)
 
     return getRecommendedMovies(movies)

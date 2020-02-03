@@ -1,7 +1,7 @@
 import { searchMovie } from './movie.types'
 
 const initialState = {
-  movie: '',
+  movie: null,
   moviesId: [],
   likedMovies: [],
   movies: []

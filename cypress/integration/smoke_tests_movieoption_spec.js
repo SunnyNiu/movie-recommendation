@@ -5,7 +5,7 @@ describe('Smoke tests movie options', () => {
 
   const btnLike = 'Like'
   const btnSkip = 'Skip'
-  const btnStart = 'Start!'
+  const btnStart = 'Start'
 
   beforeEach(function () {
     cy.visit('/')
@@ -44,19 +44,19 @@ describe('Smoke tests movie options', () => {
 
     it('It should navigate to recommend movie page after clicking Like buttons 10 times', () => {
       clickButtonTimes(btnLike, 10)
-      cy.get('h1').contains('You Probably Like these Movies:')
+      cy.get('h2').contains('You Probably Like these Movies:')
     })
 
     it('It should navigate to recommend movie page after clicking Skip buttons 10 times', () => {
       clickButtonTimes(btnSkip, 10)
-      cy.get('h1').contains('You Probably Like these Movies:')
+      cy.get('h2').contains('You Probably Like these Movies:')
 
     })
 
     it('It should navigate to recommend movie page after clicking Skip and Like buttons 10 times in total', () => {
       clickButtonTimes(btnSkip, 5)
       clickButtonTimes(btnLike, 5)
-      cy.get('h1').contains('You Probably Like these Movies:')
+      cy.get('h2').contains('You Probably Like these Movies:')
     })
   })
 })

@@ -1,10 +1,10 @@
-import movieReducer from '../src/redux/movie.reducer'
-import { searchMovie } from '../src/redux/movie.types'
+import movieReducer from '../src/client/redux/movie.reducer'
+import { searchMovie } from '../src/client/redux/movie.types'
 
 describe('movieReducer tests', () => {
   it('nextmovie shows new movie', () => {
     const currentState = {
-      movie: '',
+      movie: null,
       moviesId: [],
       likedMovies: [],
       movies: []
@@ -83,7 +83,7 @@ describe('movieReducer tests', () => {
 
     // expected status is same as initialSate in reducer
     const initialState = {
-      movie: '',
+      movie: null,
       moviesId: [],
       likedMovies: [],
       movies: []
