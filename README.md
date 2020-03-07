@@ -1,44 +1,19 @@
-# movie-recommendation
-```
-Thump up/Skip 10 movies, it will recommend 20 movies based on your options.
-It is developed using Redux, Express, JavaScript, Superagent, Knex, SQLite.
-Unit testing using Jest, Supertest, Nock, Enzyme. 
-E2E testing using Cypress.
-Configured docker and yml file and automatically deploy to heroku when push code to master branch.
+# Bus In Carpark Simulator
 
-deployed to heroku,
-https://moviesrecommend.herokuapp.com/
+This Bus In Carpark Simulator simulates a robot operated bus moving in a carpark of dimension 5x5.
+
+#### Usage
+To build a bundled js file
+```
+yarn build
 ```
 
-## Install & Setup the database & run && testing
-
-After cloning this repo
-
+To run the web application with dev server
 ```
-set up the database
-npx knex migrate:latest
-npx knex seed:run
-```
-
-```
-shell
-yarn
 yarn start
 ```
 
+To lint, test, prettify
 ```
-run Cypress E2E testing
-yarn e2e
+yarn prettify && yarn lint && yarn test
 ```
-
-```
-run Unit testing
-yarn test
-```
-
-## Things to look at
-
-URL                                
------------------------------------
-http://localhost:3000/
-
