@@ -1,7 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable('genres', t => {
     t.increments('id')
-    t.string('type').notNull()
+    t.string('type')
   })
 }
 
