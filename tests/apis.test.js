@@ -1,37 +1,39 @@
-import nock from 'nock'
-const { getRecommendedMovies, getMoviesByIds } = require('../src/client/api/recommendedMovies')
+import nock from 'nock';
 
-const apiUrl = 'http://localhost'
+const {
+  getRecommendedMovies,
+  getMoviesByIds,
+} = require('../src/client/api/recommendedMovies');
+
+const apiUrl = 'http://localhost';
 
 describe('apis tests', () => {
   it('getMoviesByIds return a response object with correct movies', () => {
-    const expected = [{ name: 'Iron Man' }, { name: 'The Incredible Hulk' }]
+    const expected = [{ name: 'Iron Man' }, { name: 'The Incredible Hulk' }];
 
-    const moviesId = [2, 3]
+    const moviesId = [2, 3];
 
     nock(apiUrl)
       .get(`/movie?moviesId=${moviesId.join(',')}`)
-      .reply(200, expected)
+      .reply(200, expected);
 
-    return getMoviesByIds(moviesId)
-      .then(names => {
-        expect(names).toEqual(expected)
-      })
-  })
+    return getMoviesByIds(moviesId).then((names) => {
+      expect(names).toEqual(expected);
+    });
+  });
 
   it('getRecommendedMovie return a correct movies', () => {
-    const expected = [{ name: 'Iron Man' }, { name: 'The Incredible Hulk' }]
+    const expected = [{ name: 'Iron Man' }, { name: 'The Incredible Hulk' }];
 
-    const movies = ['Thor', 'Logan']
-    const moviesJoinWithComma = movies.join(',')
+    const movies = ['Thor', 'Logan'];
+    const moviesJoinWithComma = movies.join(',');
 
     nock(apiUrl)
       .get(`/recommendation/${moviesJoinWithComma}`)
-      .reply(200, expected)
+      .reply(200, expected);
 
-    return getRecommendedMovies(movies)
-      .then(movies => {
-        expect(movies).toEqual(expected)
-      })
-  })
-})
+    return getRecommendedMovies(movies).then((movies) => {
+      expect(movies).toEqual(expected);
+    });
+  });
+});

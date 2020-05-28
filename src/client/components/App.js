@@ -21,7 +21,7 @@ const Content = styled.div`
 `;
 
 const App = () => (
-  <>
+  <div>
     <Header />
     <Content>
       <GlobalStyle />
@@ -30,7 +30,7 @@ const App = () => (
         <Route exact path="/movie-explorer" component={MovieExplorer} />
       </Switch>
     </Content>
-  </>
+  </div>
 );
 
 export default App;

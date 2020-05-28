@@ -2,19 +2,21 @@
 
 exports[`<Recommendation /> component tests should render with given state from Redux store 1`] = `
 <div
-  className="sc-EHOje eSPVKp"
+  className="MovieContainer-jcnqfJ blwKBe"
 >
   <h2
-    className="sc-ifAKCX gccRyr"
+    className="Title-kAzUgf dqyLeU"
   >
     You Probably Like these Movies:
   </h2>
   
   <button
-    className="sc-bdVaJa jYgJaf"
+    className="Button-hYXUXp heByZf"
     onClick={[Function]}
   >
-     Back to Home! 
+     
+    Back to Home!
+     
   </button>
 </div>
 `;

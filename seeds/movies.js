@@ -1,6 +1,7 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('movies').del()
+  return knex('movies')
+    .del()
     .then(function () {
       // Inserts seed entries
       return knex('movies').insert([
@@ -9,7 +10,11 @@ exports.seed = function (knex) {
         { id: 3, name: 'The Incredible Hulk', image: '/images/3.png' },
         { id: 4, name: 'Iron Man 2', image: '/images/4.png' },
         { id: 5, name: 'Thor', image: '/images/5.png' },
-        { id: 6, name: 'Captain America: The First Avenger', image: '/images/6.png' },
+        {
+          id: 6,
+          name: 'Captain America: The First Avenger',
+          image: '/images/6.png',
+        },
         { id: 7, name: 'Marvels The Avengers', image: '/images/7.png' },
         { id: 8, name: ' The Godfather: Part II', image: '/images/8.png' },
         { id: 9, name: 'The Lives of Others', image: '/images/9.png' },
@@ -27,7 +32,11 @@ exports.seed = function (knex) {
         { id: 21, name: 'Back to the Future', image: '/images/21.png' },
         { id: 22, name: 'Modern Times', image: '/images/22.png' },
         { id: 23, name: 'Snatch', image: '/images/23.png' },
-        { id: 24, name: 'Star Wars: Episode V - The Empire Strikes Back', image: '/images/24.png' },
+        {
+          id: 24,
+          name: 'Star Wars: Episode V - The Empire Strikes Back',
+          image: '/images/24.png',
+        },
         { id: 25, name: 'The Green Mile', image: '/images/25.png' },
         { id: 26, name: '12 Years a Slave', image: '/images/26.png' },
         { id: 27, name: 'Airlift', image: '/images/27.png' },
@@ -70,9 +79,21 @@ exports.seed = function (knex) {
         { id: 64, name: 'Million Dollar Baby', image: '/images/64.png' },
         { id: 65, name: 'Downfall', image: '/images/65.png' },
         { id: 66, name: 'Before Sunset', image: '/images/66.png' },
-        { id: 67, name: 'The Lord of the Rings: The Two Towers', image: '/images/67.png' },
-        { id: 68, name: 'Spider-Man: Into the Spider-Verse', image: '/images/68.png' },
-        { id: 69, name: 'Star Wars: Episode VI - Return of the Jedi', image: '/images/69.png' },
+        {
+          id: 67,
+          name: 'The Lord of the Rings: The Two Towers',
+          image: '/images/67.png',
+        },
+        {
+          id: 68,
+          name: 'Spider-Man: Into the Spider-Verse',
+          image: '/images/68.png',
+        },
+        {
+          id: 69,
+          name: 'Star Wars: Episode VI - Return of the Jedi',
+          image: '/images/69.png',
+        },
         { id: 70, name: 'The Hunt', image: '/images/70.png' },
         { id: 71, name: 'Up', image: '/images/71.png' },
         { id: 72, name: 'Ford v Ferrari', image: '/images/72.png' },
@@ -92,8 +113,12 @@ exports.seed = function (knex) {
         { id: 86, name: 'Togo', image: '/images/86.png' },
         { id: 87, name: 'Ad Astra', image: '/images/87.png' },
         { id: 88, name: "Dr. Seuss' The Grinch", image: '/images/88.png' },
-        { id: 89, name: 'Jumanji: Welcome to the Jungle', image: '/images/89.png' },
-        { id: 90, name: 'The Polar Express', image: '/images/90.png' }
-      ])
-    })
-}
+        {
+          id: 89,
+          name: 'Jumanji: Welcome to the Jungle',
+          image: '/images/89.png',
+        },
+        { id: 90, name: 'The Polar Express', image: '/images/90.png' },
+      ]);
+    });
+};

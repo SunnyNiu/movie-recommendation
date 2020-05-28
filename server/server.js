@@ -1,12 +1,13 @@
-const path = require('path')
-const express = require('express')
-const cors = require('cors')
+const path = require('path');
+const express = require('express');
+const cors = require('cors');
 
-const movieRoutes = require('./movies')
-const server = express()
+const movieRoutes = require('./movies');
 
-server.use(express.static(path.join(__dirname, './public')))
-server.use(cors())
-server.use('/', movieRoutes)
+const server = express();
 
-module.exports = server
+server.use(express.static(path.join(__dirname, './public')));
+server.use(cors());
+server.use('/', movieRoutes);
+
+module.exports = server;

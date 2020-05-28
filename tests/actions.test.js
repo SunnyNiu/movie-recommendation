@@ -2,54 +2,58 @@ import {
   showMovie,
   movies,
   clearAll,
-  likeMovieCreator
+  likeMovieCreator,
+} from '../src/client/redux/movie.actions';
 
-} from '../src/client/redux/movie.actions'
-
-import { searchMovie } from '../src/client/redux/movie.types'
+import { searchMovie } from '../src/client/redux/movie.types';
 
 describe('action tests', () => {
   it('showMovie return movie', () => {
-    const movie = { id: '1', name: 'Joker (I) (2019)', image: '../images/1.png' }
+    const movie = {
+      id: '1',
+      name: 'Joker (I) (2019)',
+      image: '../images/1.png',
+    };
     const expected = {
       type: searchMovie.NEXT_MOVIE,
-      movie: movie
-    }
+      movie,
+    };
 
-    const actual = showMovie(movie)
-    expect(actual).toEqual(expected)
-  })
+    const actual = showMovie(movie);
+    expect(actual).toEqual(expected);
+  });
 
   it('movies return recommended movies', () => {
     const recommendedMovies = [
       { name: 'Joker (I) (2019)', des: 'xx' },
-      { name: 'Your Name', des: 'yy' } ]
+      { name: 'Your Name', des: 'yy' },
+    ];
     const expected = {
       type: searchMovie.SHOW_MOVIES,
-      movies: recommendedMovies
-    }
+      movies: recommendedMovies,
+    };
 
-    const actual = movies(recommendedMovies)
-    expect(actual).toEqual(expected)
-  })
+    const actual = movies(recommendedMovies);
+    expect(actual).toEqual(expected);
+  });
 
   it('it return liked movie', () => {
-    const name = 'Iron man'
+    const name = 'Iron man';
     const expected = {
       type: searchMovie.LIKE_MOVIE,
-      name: name
-    }
+      name,
+    };
 
-    const actual = likeMovieCreator(name)
-    expect(actual).toEqual(expected)
-  })
+    const actual = likeMovieCreator(name);
+    expect(actual).toEqual(expected);
+  });
 
   it('clearAll returns initial state', () => {
     const expected = {
-      type: searchMovie.CLEAR_ALLSTATE
-    }
+      type: searchMovie.CLEAR_ALLSTATE,
+    };
 
-    const actual = clearAll()
-    expect(actual).toEqual(expected)
-  })
-})
+    const actual = clearAll();
+    expect(actual).toEqual(expected);
+  });
+});

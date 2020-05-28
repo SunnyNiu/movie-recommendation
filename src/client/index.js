@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore, compose } from 'redux';
 import thunk from 'redux-thunk';
-import reducer from './redux/movie.reducer';
 import { HashRouter } from 'react-router-dom';
+import reducer from './redux/movie.reducer';
 
+// eslint-disable-next-line import/extensions
 import App from './components/App';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

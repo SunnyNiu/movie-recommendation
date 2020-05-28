@@ -5,11 +5,12 @@ const Cell = styled.div`
   height: 100%;
   min-width: ${({ minWidth = 0 }) => minWidth};
   grid-column-end: ${({ width = 1 }) => `span ${width}`};
-  grid-row-end: ${({ height = 1 }) => `span ${height}`}
-    ${({ left }) => left && `grid-column-start: ${left}`}
-    ${({ top }) => top && `grid-row-start: ${top}`}
-    ${({ center }) => center && 'text-align: center'};
+  grid-row-end: ${({ height = 1 }) => `span ${height}`};
+  ${({ left }) => left && `grid-column-start: ${left}`};
+  ${({ top }) => top && `grid-row-start: ${top}`};
+  ${({ center }) => center && 'text-align: center'};
 `;
+
 Cell.propTypes = {
   width: PropTypes.number,
   height: PropTypes.number,

@@ -1,6 +1,7 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('genres').del()
+  return knex('genres')
+    .del()
     .then(function () {
       // Inserts seed entries
       return knex('genres').insert([
@@ -22,7 +23,7 @@ exports.seed = function (knex) {
         { id: 16, type: 'Romance' },
         { id: 17, type: 'SciFi' },
         { id: 18, type: 'Sport' },
-        { id: 19, type: 'Thriller' }
-      ])
-    })
-}
+        { id: 19, type: 'Thriller' },
+      ]);
+    });
+};

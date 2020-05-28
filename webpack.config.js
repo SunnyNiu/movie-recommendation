@@ -1,22 +1,20 @@
-const path = require('path')
-module.exports = require('knex')
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: './src/client/index.js',
   output: {
     path: path.join(__dirname, 'server/public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   mode: 'development',
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/
-    }
-    ]
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
   devServer: {
     compress: true,
@@ -25,18 +23,18 @@ module.exports = {
     proxy: {
       '/movie/*': {
         target: 'http://localhost:3000',
-        secure: false
+        secure: false,
       },
 
       '/recommendation/*': {
         target: 'http://localhost:3000',
-        secure: false
-      }
-    }
+        secure: false,
+      },
+    },
   },
   devtool: 'source-map',
   externals: {
     sqlite3: 'commonjs sqlite3',
-    knex: 'commonjs knex'
-  }
-}
+    knex: 'commonjs knex',
+  },
+};

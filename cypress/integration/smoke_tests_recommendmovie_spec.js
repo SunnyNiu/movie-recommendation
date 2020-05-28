@@ -10,6 +10,7 @@ describe('Smoke tests recommendation movie', () => {
     cy.visit('/')
     cy.get('button').contains(btnStart).click()
     for (let i = 0; i < 10; i++) {
+      cy.wait(1000)
       cy.get('button').contains(btnLike).click()
     }
   })

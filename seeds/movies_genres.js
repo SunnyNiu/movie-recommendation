@@ -1,6 +1,7 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('movies_genres').del()
+  return knex('movies_genres')
+    .del()
     .then(function () {
       // Inserts seed entries
       return knex('movies_genres').insert([
@@ -220,7 +221,7 @@ exports.seed = function (knex) {
         { id: 214, movie_id: 79, genre_id: 7 },
         { id: 215, movie_id: 80, genre_id: 1 },
         { id: 216, movie_id: 80, genre_id: 7 },
-        { id: 217, movie_id: 80, genre_id: 15 }
-      ])
-    })
-}
+        { id: 217, movie_id: 80, genre_id: 15 },
+      ]);
+    });
+};

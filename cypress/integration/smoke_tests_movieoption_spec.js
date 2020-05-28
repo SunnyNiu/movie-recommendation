@@ -15,6 +15,7 @@ describe('Smoke tests movie options', () => {
   function clickButtonTimes (btn, n) {
     for (let i = 0; i < n; i++) {
       cy.get('button').contains(btn).click()
+      cy.wait(1000);
     }
   }
 
